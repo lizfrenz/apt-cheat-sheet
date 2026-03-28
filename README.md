@@ -3,7 +3,7 @@ Tracking modern cyber threat actors for fun, work, and study.
 ---
 
 # Threat Actor Profile: Sandworm
-**📖 The threat actor group "Sandworm" was named by researchers because of references to the science fiction novel Dune by Frank Herbert found in their malware source code.** 
+>📖 The threat actor group "Sandworm" was named by researchers because of references to the science fiction novel Dune by Frank Herbert found in their malware source code.
 ---
 
 ## 1. Basic Identification
@@ -122,12 +122,11 @@ Tracking modern cyber threat actors for fun, work, and study.
 | Impact | Data Destruction [T1485] |
 | Impact | Disk Wipe [T1561] |
 | Impact | Inhibit System Recovery [T1490] |
-
-[Source: MITRE ATT&CK](https://attack.mitre.org/groups/G0034/)
+>[Source: MITRE ATT&CK](https://attack.mitre.org/groups/G0034/)
 ---
 
 # Threat Actor Profile: Dragonfly
-**🪰 The threat actor name Dragonfly was coined by Symantec (part of the insect-driven naming convenction).**
+>🪰 The threat actor name Dragonfly was coined by Symantec (part of the insect-driven naming convenction).
 ---
 
 ## 1. Basic Identification
@@ -234,14 +233,13 @@ Tracking modern cyber threat actors for fun, work, and study.
 | Defense Evasion | Indicator Removal on Host [T1070] |
 | Command and Control | Commonly Used Port [T1043] |
 | Exfiltration | Exfiltration Over C2 Channel [T1041] |
-
-[Source: MITRE ATT&CK](https://attack.mitre.org/groups/G0035/)
+>[Source: MITRE ATT&CK](https://attack.mitre.org/groups/G0035/)
 ---
 # Threat Actor Profile: UAC-0099
-**⚠️ LIMITED INTELLIGENCE WARNING 
+>⚠️ LIMITED INTELLIGENCE WARNING 
 Naming Authority: CERT-UA (Computer Emergency Response Team of Ukraine).
 Origin Timeframe: The group was first formally documented and named by CERT-UA in May 2023 (specifically in Advisory #6710).
-Designation Meaning: The "UAC" prefix stands for Ukraine Activity Croup, a convention used by CERT-UA to track malicious cyber activity specifically targeting Ukrainian entities.**
+Designation Meaning: The "UAC" prefix stands for Ukraine Activity Croup, a convention used by CERT-UA to track malicious cyber activity specifically targeting Ukrainian entities.
 ---
 
 ## 1. Basic Identification
@@ -332,12 +330,11 @@ Designation Meaning: The "UAC" prefix stands for Ukraine Activity Croup, a conve
 | Exfiltration | Exfiltration Over C2 Channel [T1041] |
 | Command and Control | Application Layer Protocol: Web Protocols [T1071.001] |
 | Command and Control | Ingress Tool Transfer [T1105] |
-
-[Source: CERT-UA advisories](https://medium.com/h7w/analyzing-uac-0099-tactics-techniques-and-procedures-2023-2025-296f6ad672fc)
+>[Source: CERT-UA advisories](https://medium.com/h7w/analyzing-uac-0099-tactics-techniques-and-procedures-2023-2025-296f6ad672fc)
 ---
 # Threat Actor Profile: PHALT#BLYX
-**⚠️ LIMITED INTELLIGENCE WARNING  
-PHALT#BLYX is a campaign-level designation assigned by Securonix in January 2026, not a named persistent threat actor group. The name comes directly from technical artifacts found within the malicious code during the infection process, specifically within an MSBuild project file. Attribution to a specific Russian-aligned threat group is assessed with low confidence.**
+>⚠️ LIMITED INTELLIGENCE WARNING  
+PHALT#BLYX is a campaign-level designation assigned by Securonix in January 2026, not a named persistent threat actor group. The name comes directly from technical artifacts found within the malicious code during the infection process, specifically within an MSBuild project file. Attribution to a specific Russian-aligned threat group is assessed with low confidence.
 
 ---
 
@@ -401,10 +398,10 @@ PHALT#BLYX is a campaign-level designation assigned by Securonix in January 2026
 | Persistence | Boot or Logon Autostart Execution: Startup Folder [T1547.001] |
 | Command and Control | Application Layer Protocol: Web Protocols [T1071.001] |
 | Command and Control | Ingress Tool Transfer [T1105] |
-[Source:Securonix Threat Research](https://www.securonix.com/blog/analyzing-phaltblyx-how-fake-bsods-and-trusted-build-tools-are-used-to-construct-a-malware-infection/)
+>[Source:Securonix Threat Research](https://www.securonix.com/blog/analyzing-phaltblyx-how-fake-bsods-and-trusted-build-tools-are-used-to-construct-a-malware-infection/)
 ---
 # Threat Actor Profile: Salt Typhoon
-**🌀 Microsoft naming conventions generally use weather-related terms.**
+>🌀 Microsoft naming conventions generally use weather-related terms.
 
 ---
 
@@ -510,6 +507,5 @@ PHALT#BLYX is a campaign-level designation assigned by Securonix in January 2026
 | Collection | Data from Configuration Repository: Network Device Configuration Dump [T1602.002] |
 | Exfiltration | Exfiltration Over Alternative Protocol [T1048] |
 | Command and Control | Protocol Tunneling [T1572] |
-
-[Source: MITRE ATT&CK](https://attack.mitre.org/groups/G1020)
+>[Source: MITRE ATT&CK](https://attack.mitre.org/groups/G1020)
 ---
