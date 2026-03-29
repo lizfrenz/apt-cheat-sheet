@@ -1002,3 +1002,644 @@ GTG-1002 is a recently designated threat actor cluster. Attribution to a specifi
 | Impact | Data Destruction [T1485] |
 >[Source: CISA Advisory AA25-203A](https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-203a)
 ---
+# Threat Actor Profile: ShinyHunters
+>✨ Refers to the Pokémon franchise, where "shiny" creatures are rare, and "hunters" seek them out.
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | ShinyHunters |
+| **Aliases** | UNC6040, UNC6240, UNC6661, ShinyCorp, Sp1d3rHunters (collaborative persona with Scattered Spider) |
+| **Actor Type** | eCrime |
+| **Suspected Origin** | Multi-national (Western; French national Sebastien Raoult sentenced in US 2024; leadership appears to operate internationally) |
+| **Active Since** | 2020 |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 Mass Database Theft Campaign (2020–2021)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2020-2021 |
+| **Campaign / Vulnerability Name** | Mass Data Breach Campaign |
+| **Victims / Targets** | Tokopedia (91M accounts), Mathway (25M), Wattpad, Microsoft GitHub private repos, AT&T (disputed at the time) |
+| **Description** | ShinyHunters emerged as a prolific data theft collective, systematically breaching databases via credential stuffing and API exploitation. Stolen data was sold or leaked on hacking forums. The group built a reputation through self-promotion and direct engagement with the cybersecurity press. |
+| **Source / Link** | Vali Cyber ShinyHunters Profile — https://valicyber.com/resources/shinyhunters/ |
+
+**2.2 Snowflake Customer Campaign (2024)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024 |
+| **Campaign / Vulnerability Name** | Snowflake / Ticketmaster / Santander Campaign |
+| **Victims / Targets** | Ticketmaster (560M users), Santander Bank, Neiman Marcus, AT&T, Truist Bank; approximately 165 organizations via Snowflake |
+| **Description** | ShinyHunters used old, valid credentials captured by infostealers (in combination with missing MFA) to breach Snowflake cloud storage accounts. AT&T paid approximately $370,000 to have stolen data deleted. The campaign represented a pivot from direct database hacking to cloud storage exploitation. |
+| **Source / Link** | ReliaQuest — https://reliaquest.com/blog/threat-spotlight-shinyhunters-data-breach-targets-salesforce-amid-scattered-spider-collaboration/ |
+
+**2.3 Salesforce Vishing Campaign (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-06 |
+| **Campaign / Vulnerability Name** | Salesforce Extortion Campaign (UNC6040/UNC6240/UNC6661) |
+| **Victims / Targets** | Google, Cisco, Adidas, Louis Vuitton, Pandora, Allianz, Tiffany & Co., Dior, Qantas; 80+ nations |
+| **Description** | ShinyHunters (tracked as UNC6040 by Google GTIG) pivoted to voice phishing (vishing) attacks targeting Salesforce environments. Attackers impersonated IT support, calling employees to convince them to install a trojanized "Salesforce Data Loader" app, granting OAuth access to organizational data. DDoS attacks and harassment of victim staff were used as additional extortion pressure. |
+| **Source / Link** | Google GTIG / Mandiant — https://cloud.google.com/blog/topics/threat-intelligence/expansion-shinyhunters-saas-data-theft |
+
+**2.4 Alliance with Scattered Spider / LAPSUS$ (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-08 |
+| **Campaign / Vulnerability Name** | Scattered LAPSUS$ Hunters Supergroup |
+| **Victims / Targets** | Qantas (5.7M customers), Jaguar Land Rover, Kering (Gucci/Balenciaga) |
+| **Description** | ShinyHunters launched a Telegram channel combining operations with Scattered Spider and LAPSUS$, advertising a forthcoming RaaS platform ("shinysp1d3r"). The collaborative supergroup combined ShinyHunters' data exfiltration expertise with Scattered Spider's social engineering and LAPSUS$'s insider recruitment. French law enforcement arrested four suspected members. |
+| **Source / Link** | The Hacker News / Resecurity — https://thehackernews.com/2025/08/cybercrime-groups-shinyhunters.html |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Technology and SaaS platforms
+- Financial services and banking
+- Retail and e-commerce
+- Aviation and travel
+- Luxury goods
+- Automotive
+
+### Notable Victim Organizations
+- Google, Cisco, Adidas, Louis Vuitton, Pandora, Dior, Tiffany & Co., Allianz
+- Qantas, Jaguar Land Rover, Kering
+- Ticketmaster, AT&T, Santander Bank
+
+### Technologies & CVEs Exploited
+- Credential stuffing with infostealer-harvested credentials
+- Missing or SMS-based MFA bypass
+- Salesforce OAuth device code flow abuse
+- BrowserStack API key theft
+- Social engineering / vishing (IT impersonation)
+- No CVEs required in recent campaigns — pure social engineering
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Valid Accounts [T1078] |
+| Initial Access | Phishing: Spearphishing via Service [T1566.003] |
+| Initial Access | Phishing for Information [T1598] |
+| Credential Access | Steal Application Access Token [T1528] |
+| Credential Access | Credentials from Password Stores [T1555] |
+| Credential Access | Multi-Factor Authentication Interception [T1111] |
+| Discovery | Cloud Service Discovery [T1526] |
+| Discovery | Cloud Storage Object Discovery [T1619] |
+| Collection | Data from Cloud Storage [T1530] |
+| Collection | Data from Information Repositories [T1213] |
+| Exfiltration | Exfiltration Over Web Service [T1567] |
+| Impact | Financial Theft [T1657] |
+| Impact | Network Denial of Service [T1498] |
+>[Source: Google GTIG / Mandiant](https://cloud.google.com/blog/topics/threat-intelligence/expansion-shinyhunters-saas-data-theft)
+
+---
+# Threat Actor Profile: Contagious Interview
+>😷"Contagious" (The Infection), the campaign is designed to infect software developers and "Interview" is the Lure.  The name is coined by researches from Palo Alto Unit 42.
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | Contagious Interview |
+| **Aliases** | CL-STA-0240, PurpleBravo, DeceptiveDevelopment, DEV#POPPER, Famous Chollima, UNC5342, Void Dokkaebi, Tenacious Pungsan, WaterPlum, Gwisin Gang |
+| **Actor Type** | APT |
+| **Suspected Origin** | North Korea — Lazarus Group nexus; RGB-affiliated |
+| **Active Since** | 2023 (first publicly documented); operational pattern consistent with DPRK activity since 2017 |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 Initial BeaverTail/InvisibleFerret Campaign (2023)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2023-11 |
+| **Campaign / Vulnerability Name** | Contagious Interview — BeaverTail Campaign |
+| **Victims / Targets** | Software developers (primarily US tech industry); cryptocurrency wallet holders |
+| **Description** | Unit 42 first documented Contagious Interview: North Korean threat actors posing as anonymous recruiters lured software developers into fake technical interviews. Victims were asked to run code that deployed BeaverTail (a JavaScript infostealer/downloader) and InvisibleFerret (a Python backdoor). BeaverTail can steal credentials from 13 different cryptocurrency wallets. |
+| **Source / Link** | Palo Alto Unit 42 — https://unit42.paloaltonetworks.com/two-campaigns-by-north-korea-bad-actors-target-job-hunters/ |
+
+**2.2 Expanded Targeting with Front Companies (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-04 |
+| **Campaign / Vulnerability Name** | BlockNovas / SoftGlide / Angeloper Campaign |
+| **Victims / Targets** | Cryptocurrency and blockchain developers globally; supply chain risk to their employer organizations |
+| **Description** | Contagious Interview established three fraudulent front companies in the crypto consulting sector (BlockNovas LLC, SoftGlide LLC, Angeloper Agency) with AI-generated employee personas on LinkedIn and social media. ClickFix lures were embedded in video interview platforms. The FBI seized the BlockNovas domain on April 23, 2025. New malware variant OtterCookie was introduced alongside BeaverTail and InvisibleFerret. |
+| **Source / Link** | Silent Push / The Hacker News — https://thehackernews.com/2025/04/north-korean-hackers-spread-malware-via.html |
+
+**2.3 EtherHiding Blockchain C2 (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-02 |
+| **Campaign / Vulnerability Name** | JADESNOW / EtherHiding Campaign |
+| **Victims / Targets** | Web3/DeFi developers; cryptocurrency platforms |
+| **Description** | Google GTIG documented Contagious Interview (UNC5342) adopting EtherHiding — storing and retrieving malicious payloads via Ethereum smart contracts. The technique makes C2 infrastructure highly resistant to takedown. JADESNOW malware was used to deploy a JavaScript variant of InvisibleFerret, enabling cryptocurrency theft. |
+| **Source / Link** | Google GTIG — https://cloud.google.com/blog/topics/threat-intelligence/dprk-adopts-etherhiding |
+
+**2.4 AI Developer Targeting (2025–2026)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-2026 |
+| **Campaign / Vulnerability Name** | PurpleBravo — AI/Blockchain Sector Campaign |
+| **Victims / Targets** | 3,136 identified IP addresses; AI, crypto, financial services, and software development organizations in Europe, South Asia, Middle East, Central America |
+| **Description** | Recorded Future's Insikt Group documented PurpleBravo targeting 20+ organizations, with the group expanding into AI sector targeting. Actors monitored cybersecurity threat intelligence platforms (Validin, VirusTotal) to detect infrastructure exposure and rapidly deployed replacement infrastructure, suggesting real-time operational monitoring. |
+| **Source / Link** | The Hacker News / SentinelOne — https://thehackernews.com/2026/01/north-korean-purplebravo-campaign.html |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Cryptocurrency and blockchain development
+- Decentralized finance (DeFi)
+- AI and Web3 technology
+- Financial services
+- IT services and software development
+- Marketing agencies
+
+### Notable Victim Organizations
+- Bybit (cryptocurrency exchange — linked to Trevor Greer persona)
+- Multiple unnamed crypto firms globally
+
+### Technologies & CVEs Exploited
+- npm malicious packages (supply chain)
+- ClickFix social engineering
+- Ethereum smart contracts (EtherHiding C2)
+- Video conferencing platform impersonation (MiroTalk, FreeConference.com clones)
+- BeaverTail malware (JavaScript/Qt infostealer)
+- InvisibleFerret backdoor (Python)
+- OtterCookie malware
+- JADESNOW downloader
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Phishing: Spearphishing via Service [T1566.003] |
+| Initial Access | Supply Chain Compromise: Compromise Software Dependencies [T1195.001] |
+| Execution | Command and Scripting Interpreter: Python [T1059.006] |
+| Execution | Command and Scripting Interpreter: JavaScript [T1059.007] |
+| Execution | User Execution: Malicious File [T1204.002] |
+| Persistence | Scheduled Task/Job [T1053] |
+| Defense Evasion | Obfuscated Files or Information [T1027] |
+| Defense Evasion | Masquerading [T1036] |
+| Credential Access | Credentials from Web Browsers [T1555.003] |
+| Credential Access | Steal Web Session Cookie [T1539] |
+| Collection | Data from Local System [T1005] |
+| Collection | Clipboard Data [T1115] |
+| Command and Control | Web Service [T1102] |
+| Exfiltration | Exfiltration Over C2 Channel [T1041] |
+| Impact | Financial Theft [T1657] |
+>[Source: Palo Alto Unit 42](https://unit42.paloaltonetworks.com/north-korean-threat-actors-lure-tech-job-seekers-as-fake-recruiters/#:~:text=Executive%20Summary,downloader%20and%20the%20InvisibleFerret%20backdoor.)
+---
+
+# Threat Actor Profile: DPRK IT Workers
+>🖥️👷 The primary purpose of these individuals (an insider threat) was to earn foreign currency (often $100,000+ annually per worker) and send it back to North Korea.
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | DPRK IT Workers |
+| **Aliases** | Famous Chollima, Jasper Sleet, Wagemole (CL-STA-0241), PurpleDelta |
+| **Actor Type** | APT |
+| **Suspected Origin** | North Korea — Reconnaissance General Bureau (RGB); Treasury-sanctioned entities include Yanbian Silverstar and Volasys Silverstar |
+| **Active Since** | 2017 (estimated); FBI advisory issued 2022 |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 FBI Public Advisory — Laptop Farm Operations (2022–2024)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2022-2024 |
+| **Campaign / Vulnerability Name** | DPRK IT Worker Fraud Scheme |
+| **Victims / Targets** | 300+ US companies including multiple Fortune 500 firms; two US government agencies |
+| **Description** | North Korea deployed thousands of skilled IT workers abroad (primarily in China and Russia) with stolen or fabricated identities to obtain remote employment at Western companies. US-based facilitators operated "laptop farms" to route company-provided devices through domestic addresses. Individual workers earned up to $300,000/year; collectively generating hundreds of millions annually for the DPRK weapons program. CrowdStrike tracked 304 Famous Chollima incidents in 2024 alone. |
+| **Source / Link** | FBI IC3 / US DoJ — https://www.ic3.gov/PSA/2025/PSA250723-4 |
+
+**2.2 Yanbian Silverstar / Volasys Silverstar Indictments (2024)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024-12 |
+| **Campaign / Vulnerability Name** | DoJ Indictment — 14 DPRK Nationals |
+| **Victims / Targets** | At least 64 US companies; nonprofit organizations |
+| **Description** | The US indicted 14 North Korean nationals working for DPRK-controlled companies Yanbian Silverstar (China) and Volasys Silverstar (Russia) for using stolen identities to obtain remote IT employment over six years, generating at least $88 million. |
+| **Source / Link** | US DoJ — https://www.justice.gov/opa/pr/two-north-korean-nationals-and-three-facilitators-indicted-multi-year-fraudulent-remote |
+
+**2.3 Escalation to Data Extortion (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-01 |
+| **Campaign / Vulnerability Name** | IC3 Alert — Data Extortion by IT Workers |
+| **Victims / Targets** | US and international companies employing DPRK workers |
+| **Description** | The FBI issued an IC3 advisory noting that North Korean IT workers, upon being discovered or fired, escalated to data extortion — stealing proprietary code, data, and company secrets, then threatening to leak or sell them unless ransoms were paid. Workers were observed attempting credential theft via session cookies and initiating work sessions from non-company devices. |
+| **Source / Link** | FBI IC3 — https://www.ic3.gov/PSA/2025/PSA250123 |
+
+**2.4 Arizona Laptop Farm Sentencing (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-07 |
+| **Campaign / Vulnerability Name** | $17M IT Worker Fraud — Chapman Sentencing |
+| **Victims / Targets** | 300+ US companies |
+| **Description** | An Arizona woman was sentenced to 102 months in prison for operating a laptop farm that facilitated North Korean IT workers posing as US citizens at over 300 US companies, generating more than $17 million in illicit revenue for the DPRK. |
+| **Source / Link** | FBI — https://www.fbi.gov/investigate/cyber/alerts/2025 |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- US Technology and software development
+- Cryptocurrency and blockchain
+- Defense contractors and government suppliers
+- Financial services
+- Any remote-work employer
+
+### Notable Victim Organizations
+- 64+ named US companies (DoJ indictment)
+- Fortune 500 companies (multiple unnamed)
+- Two US government agencies
+
+### Technologies & CVEs Exploited
+- Identity theft and synthetic identity creation
+- AI-generated/manipulated photos (Remaker AI)
+- Voice-changing software
+- Astrill VPN for infrastructure obfuscation
+- Residential proxies
+- Remote monitoring and management (RMM) tools
+- TeamViewer, AnyDesk, Telegram (coordination)
+- Once embedded: session cookie theft, data exfiltration, extortion
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Valid Accounts [T1078] |
+| Persistence | Valid Accounts [T1078] |
+| Persistence | Remote Access Software [T1219] |
+| Defense Evasion | Valid Accounts [T1078] |
+| Defense Evasion | Masquerading [T1036] |
+| Credential Access | Steal Web Session Cookie [T1539] |
+| Collection | Data from Local System [T1005] |
+| Collection | Data from Network Shared Drive [T1039] |
+| Exfiltration | Exfiltration Over Web Service [T1567] |
+| Exfiltration | Transfer Data to Cloud Account [T1537] |
+| Impact | Financial Theft [T1657] |
+| Impact | Data Encrypted for Impact [T1486] |
+>[Source: Microsoft Threat Intelligence](https://www.microsoft.com/en-us/security/blog/2025/06/30/jasper-sleet-north-korean-remote-it-workers-evolving-tactics-to-infiltrate-organizations/)
+
+---
+# Threat Actor Profile: DarkSpectre
+
+>⚠️ LIMITED INTELLIGENCE WARNING DarkSpectre was first publicly named by Koi Security in late 2025.The moniker refers to the group's "sleeper" strategy. Malicious code is disguised within benign-looking extensions—such as tab managers, translators, or video downloaders—that operate normally for years to build trust before turning into spyware, a tactic resembling a "phantom" or "spectre" threat that is hard to detect.
+
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | DarkSpectre |
+| **Aliases** | ShadyPanda (sub-campaign), GhostPoster (sub-campaign), Zoom Stealer (sub-campaign) |
+| **Actor Type** | APT |
+| **Suspected Origin** | China (assessed with moderate confidence; Alibaba Cloud C2 infrastructure; nation-state operational scale) |
+| **Active Since** | 2018 (earliest sub-campaign activity; seven-year operational footprint) |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 ShadyPanda Browser Extension Campaign (2018–2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2018-2025 |
+| **Campaign / Vulnerability Name** | ShadyPanda (DarkSpectre Pillar 1) |
+| **Victims / Targets** | Approximately 5.6 million users of Chrome, Edge, and Firefox extensions globally |
+| **Description** | DarkSpectre published legitimate-appearing browser extensions (new tab pages, productivity tools) using real domains (infinitynewtab[.]com, infinitytab[.]com). After accumulating millions of users and building trust, the group pushed malicious updates with 72-hour delayed activation affecting only ~10% of page loads to evade detection. Extensions performed comprehensive spyware functions including search hijacking, behavioral profiling, and affiliate fraud. |
+| **Source / Link** | Koi Security — https://www.koi.ai/blog/darkspectre-unmasking-the-threat-actor-behind-7-8-million-infected-browsers |
+
+**2.2 GhostPoster Campaign (2022–2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2022-2025 |
+| **Campaign / Vulnerability Name** | GhostPoster (DarkSpectre Pillar 2) |
+| **Victims / Targets** | Approximately 1.05 million users |
+| **Description** | A second malicious extension cluster under the DarkSpectre umbrella, GhostPoster focused on credential harvesting and persistent device fingerprinting. Shared C2 infrastructure with ShadyPanda confirmed unified actor attribution. |
+| **Source / Link** | Koi Security / The Hacker News — https://thehackernews.com/2025/12/darkspectre-browser-extension-campaigns.html |
+
+**2.3 Zoom Stealer / Corporate Intelligence Campaign (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025 |
+| **Campaign / Vulnerability Name** | Zoom Stealer (DarkSpectre Pillar 3) |
+| **Victims / Targets** | 2.2 million users; corporate participants in Google Meet, Zoom, and GoTo Webinar sessions |
+| **Description** | DarkSpectre deployed 18 malicious browser extensions mimicking enterprise videoconferencing tools. These established persistent WebSocket connections to stream meeting data in real time: meeting URLs with embedded passwords, meeting IDs, topics, participant lists, webinar speaker profiles, company affiliations, and logos. ExtraHop assessed this phase represents a shift toward semiconductor and aerospace sector targeting via supply chain interdiction in software development environments. |
+| **Source / Link** | Koi Security / The Hacker News — https://thehackernews.com/2025/12/darkspectre-browser-extension-campaigns.html |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Corporate organizations broadly (via mass extension distribution)
+- Semiconductor and aerospace (assessed emerging focus)
+- Any enterprise using videoconferencing tools
+
+### Notable Victim Organizations
+- 8.8 million users total across three campaigns (unnamed organizations)
+- Targets identified via corporate meeting infiltration capabilities
+
+### Technologies & CVEs Exploited
+- No CVEs — browser extension marketplace abuse (Chrome, Edge, Firefox, Opera)
+- WebSocket connections for real-time data streaming
+- Time-delayed payload activation (3-day delay post-approval)
+- Alibaba Cloud infrastructure for C2
+- VMProtect obfuscation
+- Legitimate driver exploitation (TrueSight2) for AV evasion (related campaigns)
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Drive-by Compromise [T1189] |
+| Execution | Browser Extensions [T1176] |
+| Persistence | Browser Extensions [T1176] |
+| Defense Evasion | Obfuscated Files or Information [T1027] |
+| Defense Evasion | Time Based Evasion [T1497.003] |
+| Defense Evasion | Masquerading [T1036] |
+| Collection | Browser Session Hijacking [T1185] |
+| Collection | Data from Information Repositories [T1213] |
+| Collection | Screen Capture [T1113] |
+| Command and Control | Application Layer Protocol: Web Protocols [T1071.001] |
+| Exfiltration | Exfiltration Over Web Service [T1567] |
+>[Source: Koi Security Research](https://www.koi.ai/blog/darkspectre-unmasking-the-threat-actor-behind-7-8-million-infected-browsers)
+
+---
+# Threat Actor Profile: Mustang Panda
+>🐎🐼 [Crowdstrike convention](https://www.crowdstrike.com/en-us/blog/meet-crowdstrikes-adversary-of-the-month-for-june-mustang-panda/)
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | Mustang Panda |
+| **Aliases** | Earth Preta, BRONZE PRESIDENT, TA416, RedDelta, HIVE0154, FIREANT, CAMARO DRAGON, STATELY TAURUS, TWILL TYPHOON, LUMINOUS MOTH, UNC6384 |
+| **Actor Type** | APT |
+| **Suspected Origin** | China — People's Republic of China (PRC); widely attributed to MSS or PLA-affiliated entity |
+| **Active Since** | 2012 |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 Vatican and Catholic Organization Targeting (2020)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2020-07 |
+| **Campaign / Vulnerability Name** | RedDelta Vatican Campaign |
+| **Victims / Targets** | Vatican, Catholic Church missions to China, Diocese of Hong Kong |
+| **Description** | Mustang Panda targeted the Vatican and Catholic organizations ahead of the renewal of a Vatican-China agreement on bishop appointments. Attacks used PlugX malware delivered via spearphishing with geopolitical lures. The operation demonstrated Mustang Panda's political intelligence targeting in support of Chinese state interests in religious affairs. |
+| **Source / Link** | Recorded Future Insikt Group — https://go.recordedfuture.com/hubfs/reports/cta-2020-0728.pdf |
+
+**2.2 European Diplomatic Targeting During Ukraine Invasion (2022)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2022-03 |
+| **Campaign / Vulnerability Name** | Europe PlugX Campaign / "Political Guidance for EU approach towards Russia" Lure |
+| **Victims / Targets** | European diplomatic and government entities; EU Commission-related organizations |
+| **Description** | During the Russian invasion of Ukraine, Mustang Panda ramped up targeting of European diplomatic entities using politically themed lures (including a malicious RAR titled "Political Guidance for the new EU approach towards Russia"). The campaign deployed new PlugX variants and demonstrated Mustang Panda's opportunistic exploitation of geopolitical crises for intelligence collection. |
+| **Source / Link** | Cisco Talos / EclecticIQ — https://blog.talosintelligence.com/2022/05/mustang-panda-targets-europe.html |
+
+**2.3 ASEAN-Australia Summit Targeting (2024)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024 |
+| **Campaign / Vulnerability Name** | ASEAN Entity Campaign |
+| **Victims / Targets** | ASEAN government bodies; Philippines, Slovakia; organizations attending 2024 ASEAN-Australia Summit |
+| **Description** | Mustang Panda continued its aggressive targeting of Southeast Asian government entities, combining phishing with USB-based malware (HIUPAN worm / PUBLOAD). The group used ToneShell backdoors and mixed legitimate and malicious components to evade detection, per Trend Micro reporting. |
+| **Source / Link** | Palo Alto Unit 42 — https://unit42.paloaltonetworks.com/asean-entities-chinese-apt/ |
+
+**2.4 SnakeDisk USB Worm / Thailand Government Targeting (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025 |
+| **Campaign / Vulnerability Name** | SnakeDisk Campaign |
+| **Victims / Targets** | Thai government and military entities (geofenced to Thai IPs); US policy organizations |
+| **Description** | Mustang Panda deployed SnakeDisk, a geo-fenced USB worm engineered to execute only on devices with Thai IP addresses, coinciding with the Thailand-Cambodia border conflict. In parallel, after a January 2025 PlugX infrastructure dismantlement by international law enforcement, Mustang Panda rapidly retooled with the LOTUSLITE C++ backdoor to renew targeting of US policy organizations. |
+| **Source / Link** | Picus Security / Brandefense — https://www.picussecurity.com/resource/blog/breaking-down-mustang-panda-windows-endpoint-campaign |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Government and diplomatic entities (primary)
+- Non-governmental organizations (NGOs)
+- Religious organizations
+- Telecommunications
+- Think tanks and policy research institutions
+- Military (Southeast Asia)
+
+### Notable Victim Organizations
+- Vatican and Catholic Church organizations
+- European Commission / EU diplomatic entities
+- Philippine, Thai, Slovak government bodies
+- US think tanks (unnamed)
+
+### Technologies & CVEs Exploited
+- PlugX / Korplug RAT (primary tool across all campaigns)
+- ToneShell / Frankenstein ToneShell backdoors
+- LOTUSLITE backdoor (2026)
+- SnakeDisk USB worm
+- StarProxy, SplatCloak, PAKLOG, CorKLOG (2025 toolset)
+- DLL sideloading with signed binaries
+- HIUPAN USB worm
+- LNK files and RAR archives (phishing delivery)
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Spearphishing Attachment [T1566.001] |
+| Initial Access | Replication Through Removable Media [T1091] |
+| Execution | User Execution: Malicious File [T1204.002] |
+| Execution | Shared Modules [T1129] |
+| Persistence | Scheduled Task/Job: Scheduled Task [T1053.005] |
+| Persistence | Boot or Logon Autostart Execution: Registry Run Keys [T1547.001] |
+| Defense Evasion | DLL Side-Loading [T1574.002] |
+| Defense Evasion | Subvert Trust Controls: Code Signing [T1553.002] |
+| Defense Evasion | Obfuscated Files or Information [T1027] |
+| Defense Evasion | Masquerading [T1036] |
+| Defense Evasion | Rootkit [T1014] |
+| Collection | Data from Local System [T1005] |
+| Collection | Data Staged [T1074] |
+| Command and Control | Application Layer Protocol: Web Protocols [T1071.001] |
+| Command and Control | Ingress Tool Transfer [T1105] |
+| Exfiltration | Exfiltration Over C2 Channel [T1041] |
+>[Source: MITRE ATT&CK Group G0129](https://attack.mitre.org/groups/G0129/) 
+---
+# Threat Actor Profile: Silver Fox
+
+>⚠️ LIMITED INTELLIGENCE WARNING Discovered by Chinese security firm ThreatBook. Known for the fast evolving techniques. 
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | Silver Fox |
+| **Aliases** | Void Arachne, The Great Thief of Valley, Silver Fox APT |
+| **Actor Type** | APT (note: exhibits hybrid financially motivated / state espionage characteristics — possible state-sponsored group masquerading as eCrime) |
+| **Suspected Origin** | China (assessed with moderate confidence based on infrastructure, language targeting, and Alibaba Cloud usage) |
+| **Active Since** | 2024 (first documented; earlier activity likely under different tracking) |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 Chinese-Speaking User Campaign via Winos 4.0 / ValleyRAT (2024)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024-06 |
+| **Campaign / Vulnerability Name** | ValleyRAT / Winos 4.0 Campaign |
+| **Victims / Targets** | Chinese-speaking individuals and organizations; government entities, cybersecurity companies, e-commerce, finance, gaming companies |
+| **Description** | Silver Fox (tracked by Trend Micro as Void Arachne) distributed ValleyRAT (aka Winos 4.0) through SEO poisoning, Telegram channels, and social media, disguising the malware as popular AI applications, VPN software, and gaming tools. The campaign targeted Chinese-speaking users circumventing the Great Firewall. ValleyRAT is a modular backdoor enabling keystroke logging, security bypass, screen capture, and data exfiltration. |
+| **Source / Link** | Trend Micro / Forescout Vedere Labs — https://industrialcyber.co/medical/forescout-details-silver-fox-campaign-targeting-healthcare-with-backdoors-keyloggers-crypto-miners/ |
+
+**2.2 Healthcare Sector Targeting via DICOM Viewer (2024–2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024-07 / 2025-01 |
+| **Campaign / Vulnerability Name** | DICOM Viewer Trojanization Campaign |
+| **Victims / Targets** | Healthcare organizations in US and Canada; patients and hospitals via Philips DICOM medical imaging viewers |
+| **Description** | Forescout Vedere Labs identified 29 malware samples (July 2024–January 2025) masquerading as Philips DICOM viewers. The MediaViewerLauncher.exe first-stage malware performed C2 beaconing, downloaded encrypted payloads from Alibaba Cloud, and established persistence via Windows Scheduled Tasks. Final payloads included ValleyRAT backdoor, a keylogger, and an XMRig cryptocurrency miner. |
+| **Source / Link** | Forescout Vedere Labs / Infosecurity Magazine — https://www.infosecurity-magazine.com/news/chinese-silver-fox-backdoors/ |
+
+**2.3 Microsoft Teams SEO Poisoning with Russian False Flag (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-11 |
+| **Campaign / Vulnerability Name** | teamscn[.]com Campaign |
+| **Victims / Targets** | Chinese-speaking users and organizations, including Western companies operating in China |
+| **Description** | Silver Fox used a fake Microsoft Teams website (teamscn[.]com) to distribute ValleyRAT loaders, incorporating Cyrillic characters in the ZIP filename to create a Russian false flag and complicate attribution. ReliaQuest linked this to Silver Fox via infrastructure pivot analysis connecting the domain to prior Telegram phishing sites targeting Chinese-speaking users. |
+| **Source / Link** | ReliaQuest — https://reliaquest.com/blog/threat-spotlight-silver-foxs-russian-ruse-fake-microsoft-teams-attack/ |
+
+**2.4 South Asia Tax Lure Campaign (2025–2026)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-2026 |
+| **Campaign / Vulnerability Name** | Tax Authority Impersonation Campaign |
+| **Victims / Targets** | South Asian financial sector; organizations in India and surrounding region |
+| **Description** | Silver Fox transitioned from ValleyRAT to abusing a misconfigured Chinese RMM tool, then to a custom Python-based stealer disguised as a WhatsApp application. Lures impersonated national tax authorities and payroll documents. Sekoia TDR confirmed the evolution across 2025–2026, noting the group increasingly blends intelligence collection with financial crime. |
+| **Source / Link** | Sekoia TDR — https://blog.sekoia.io/silver-fox-the-only-tax-audit-where-the-fine-print-installs-malware/ |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Healthcare (medical imaging platforms)
+- Government and law enforcement
+- Cybersecurity companies
+- E-commerce and financial services
+- Gaming
+- Chinese-speaking individuals globally (primary demographic)
+
+### Notable Victim Organizations
+- Healthcare delivery organizations (HDOs) using Philips DICOM viewers
+- Chinese-speaking enterprises in US, Canada
+- South Asian financial organizations
+
+### Technologies & CVEs Exploited
+- SEO poisoning (Google Search manipulation)
+- Trojanized legitimate software (DICOM viewers, Teams, AI apps, VPN clients)
+- ValleyRAT / Winos 4.0 (modular RAT derived from Gh0st RAT)
+- TrueSight2 vulnerable driver (AV evasion)
+- VMProtect obfuscation
+- CleverSoar installer, Nidhogg rootkit (late 2024)
+- Alibaba Cloud for payload hosting
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Drive-by Compromise [T1189] |
+| Initial Access | Phishing: Spearphishing Attachment [T1566.001] |
+| Execution | Shared Modules [T1129] |
+| Execution | User Execution: Malicious File [T1204.002] |
+| Persistence | Scheduled Task/Job: Scheduled Task [T1053.005] |
+| Persistence | Boot or Logon Autostart Execution: Registry Run Keys [T1547.001] |
+| Defense Evasion | Subvert Trust Controls: Install Root Certificate [T1553.004] |
+| Defense Evasion | Rootkit [T1014] |
+| Defense Evasion | Obfuscated Files or Information [T1027] |
+| Defense Evasion | Impair Defenses: Disable or Modify Tools [T1562.001] |
+| Defense Evasion | Masquerading [T1036] |
+| Credential Access | Input Capture: Keylogging [T1056.001] |
+| Collection | Screen Capture [T1113] |
+| Collection | Credentials from Web Browsers [T1555.003] |
+| Command and Control | Application Layer Protocol: Web Protocols [T1071.001] |
+| Exfiltration | Exfiltration Over C2 Channel [T1041] |
+| Impact | Resource Hijacking [T1496] |
+>[Source: Sekoia TDR](https://blog.sekoia.io/silver-fox-the-only-tax-audit-where-the-fine-print-installs-malware/)
+
+---
