@@ -1,0 +1,107 @@
+# Threat Actor Profile: DPRK IT Workers
+>🖥️👷 The primary purpose of these individuals (an insider threat) was to earn foreign currency (often $100,000+ annually per worker) and send it back to North Korea.
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | DPRK IT Workers |
+| **Aliases** | Famous Chollima, Jasper Sleet, Wagemole (CL-STA-0241), PurpleDelta |
+| **Actor Type** | APT |
+| **Suspected Origin** | North Korea — Reconnaissance General Bureau (RGB); Treasury-sanctioned entities include Yanbian Silverstar and Volasys Silverstar |
+| **Active Since** | 2017 (estimated); FBI advisory issued 2022 |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 FBI Public Advisory — Laptop Farm Operations (2022–2024)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2022-2024 |
+| **Campaign / Vulnerability Name** | DPRK IT Worker Fraud Scheme |
+| **Victims / Targets** | 300+ US companies including multiple Fortune 500 firms; two US government agencies |
+| **Description** | North Korea deployed thousands of skilled IT workers abroad (primarily in China and Russia) with stolen or fabricated identities to obtain remote employment at Western companies. US-based facilitators operated "laptop farms" to route company-provided devices through domestic addresses. Individual workers earned up to $300,000/year; collectively generating hundreds of millions annually for the DPRK weapons program. CrowdStrike tracked 304 Famous Chollima incidents in 2024 alone. |
+| **Source / Link** | FBI IC3 / US DoJ — https://www.ic3.gov/PSA/2025/PSA250723-4 |
+
+**2.2 Yanbian Silverstar / Volasys Silverstar Indictments (2024)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024-12 |
+| **Campaign / Vulnerability Name** | DoJ Indictment — 14 DPRK Nationals |
+| **Victims / Targets** | At least 64 US companies; nonprofit organizations |
+| **Description** | The US indicted 14 North Korean nationals working for DPRK-controlled companies Yanbian Silverstar (China) and Volasys Silverstar (Russia) for using stolen identities to obtain remote IT employment over six years, generating at least $88 million. |
+| **Source / Link** | US DoJ — https://www.justice.gov/opa/pr/two-north-korean-nationals-and-three-facilitators-indicted-multi-year-fraudulent-remote |
+
+**2.3 Escalation to Data Extortion (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-01 |
+| **Campaign / Vulnerability Name** | IC3 Alert — Data Extortion by IT Workers |
+| **Victims / Targets** | US and international companies employing DPRK workers |
+| **Description** | The FBI issued an IC3 advisory noting that North Korean IT workers, upon being discovered or fired, escalated to data extortion — stealing proprietary code, data, and company secrets, then threatening to leak or sell them unless ransoms were paid. Workers were observed attempting credential theft via session cookies and initiating work sessions from non-company devices. |
+| **Source / Link** | FBI IC3 — https://www.ic3.gov/PSA/2025/PSA250123 |
+
+**2.4 Arizona Laptop Farm Sentencing (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-07 |
+| **Campaign / Vulnerability Name** | $17M IT Worker Fraud — Chapman Sentencing |
+| **Victims / Targets** | 300+ US companies |
+| **Description** | An Arizona woman was sentenced to 102 months in prison for operating a laptop farm that facilitated North Korean IT workers posing as US citizens at over 300 US companies, generating more than $17 million in illicit revenue for the DPRK. |
+| **Source / Link** | FBI — https://www.fbi.gov/investigate/cyber/alerts/2025 |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- US Technology and software development
+- Cryptocurrency and blockchain
+- Defense contractors and government suppliers
+- Financial services
+- Any remote-work employer
+
+### Notable Victim Organizations
+- 64+ named US companies (DoJ indictment)
+- Fortune 500 companies (multiple unnamed)
+- Two US government agencies
+
+### Technologies & CVEs Exploited
+- Identity theft and synthetic identity creation
+- AI-generated/manipulated photos (Remaker AI)
+- Voice-changing software
+- Astrill VPN for infrastructure obfuscation
+- Residential proxies
+- Remote monitoring and management (RMM) tools
+- TeamViewer, AnyDesk, Telegram (coordination)
+- Once embedded: session cookie theft, data exfiltration, extortion
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Valid Accounts [T1078] |
+| Persistence | Valid Accounts [T1078] |
+| Persistence | Remote Access Software [T1219] |
+| Defense Evasion | Valid Accounts [T1078] |
+| Defense Evasion | Masquerading [T1036] |
+| Credential Access | Steal Web Session Cookie [T1539] |
+| Collection | Data from Local System [T1005] |
+| Collection | Data from Network Shared Drive [T1039] |
+| Exfiltration | Exfiltration Over Web Service [T1567] |
+| Exfiltration | Transfer Data to Cloud Account [T1537] |
+| Impact | Financial Theft [T1657] |
+| Impact | Data Encrypted for Impact [T1486] |
+>[Source: Microsoft Threat Intelligence](https://www.microsoft.com/en-us/security/blog/2025/06/30/jasper-sleet-north-korean-remote-it-workers-evolving-tactics-to-infiltrate-organizations/)
+
+---

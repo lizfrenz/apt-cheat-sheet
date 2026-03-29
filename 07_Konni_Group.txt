@@ -1,0 +1,98 @@
+# Threat Actor Profile: Konni Group
+>🐀 The KONNI RAT: Security researchers (including Cisco Talos) first identified the unique backdoor malware and dubbed it "KONNI".
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | Konni Group |
+| **Aliases** | Kimsuky (subset), Earth Imp, TA406, Thallium, Vedalia, Velvet Chollima, APT37 (partial overlap attributed by some vendors) |
+| **Actor Type** | APT |
+| **Suspected Origin** | North Korea — Reconnaissance General Bureau (RGB) |
+| **Active Since** | 2014 (first undetected activity; publicly documented from 2017) |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 Russian Diplomatic Targeting (2022)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2022-01 |
+| **Campaign / Vulnerability Name** | New Year's Spearphishing Campaign / Konni RAT v3 |
+| **Victims / Targets** | Russian diplomatic entities and government bodies |
+| **Description** | Konni conducted spearphishing attacks using New Year's Eve lures against Russian diplomatic targets. Malicious ZIP files launched a multi-stage attack chain deploying a new version of the Konni RAT as a Windows service (scrnsvc.dll). The use of CAB files as infection stages was a distinctive marker. Researchers noted this represented an unusual targeting of Russia, a nominal DPRK ally. |
+| **Source / Link** | Cluster25 / Security Affairs — https://securityaffairs.com/126388/apt/konni-apt-russia-entities.html |
+
+**2.2 Korean Government and Academic Targeting (2024)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024 |
+| **Campaign / Vulnerability Name** | Kimsuky/Konni RAT Campaign (Q3 2024) |
+| **Victims / Targets** | Korean and Russian government entities; virtual asset transaction specialists; North Korean affairs experts |
+| **Description** | The Konni campaign escalated attacks leveraging cloud and FTP services for C2 to complicate detection. Attacks used financial and governmental themes as lures and deployed AsyncRAT variants with XOR-based encryption and future-dated timestamps for AV evasion. The group abused free hosting platforms for C2 infrastructure. |
+| **Source / Link** | CYFIRMA APT Quarterly Highlights Q3 2024 — https://www.cyfirma.com/research/apt-quarterly-highlights-q3-2024/ |
+
+**2.3 Blockchain Developer Targeting / AI-Generated Backdoor (2025–2026)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-10 / 2026-01 |
+| **Campaign / Vulnerability Name** | Blockchain Developer Spearphishing Campaign |
+| **Victims / Targets** | Software developers and engineers in blockchain, cryptocurrency, and Web3 sectors across Japan, Australia, and India |
+| **Description** | Konni shifted targeting to blockchain/crypto developers using fake project documentation as lures. Check Point Research identified a PowerShell backdoor that appeared to be AI-generated (LLM-written code with verbose documentation and modular structure). The campaign used weaponized LNK files, UAC bypass (uc.exe), and RMM tools (SimpleHelp) for persistence. |
+| **Source / Link** | Check Point Research — https://securityaffairs.com/187317/apt/north-korea-linked-konni-uses-ai-to-build-stealthy-malware-tooling.html |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Government (South Korean, Russian, and Japanese government bodies)
+- Cryptocurrency and blockchain
+- Defense and national security think tanks
+- Academia and research institutions
+- Media and journalism
+
+### Notable Victim Organizations
+- South Korean government agencies
+- Russian diplomatic missions
+- Web3/blockchain development companies (Japan, Australia, India)
+- North Korean affairs research institutions
+
+### Technologies & CVEs Exploited
+- Weaponized LNK files
+- UAC bypass techniques (uc.exe)
+- Konni RAT (custom implant, active since 2014)
+- AsyncRAT variants
+- SimpleHelp RMM (for remote access persistence)
+- Cloudflare infrastructure abuse
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Spearphishing Attachment [T1566.001] |
+| Initial Access | Spearphishing Link [T1566.002] |
+| Execution | Command and Scripting Interpreter: PowerShell [T1059.001] |
+| Execution | Command and Scripting Interpreter: Visual Basic [T1059.005] |
+| Execution | User Execution: Malicious File [T1204.002] |
+| Persistence | Scheduled Task/Job: Scheduled Task [T1053.005] |
+| Persistence | Boot or Logon Autostart Execution: Registry Run Keys [T1547.001] |
+| Privilege Escalation | Abuse Elevation Control Mechanism: Bypass UAC [T1548.002] |
+| Defense Evasion | Modify Registry [T1112] |
+| Defense Evasion | Obfuscated Files or Information [T1027] |
+| Defense Evasion | Process Injection [T1055] |
+| Collection | Screen Capture [T1113] |
+| Collection | Input Capture: Keylogging [T1056.001] |
+| Command and Control | Application Layer Protocol: Web Protocols [T1071.001] |
+| Command and Control | Encrypted Channel [T1573] |
+| Exfiltration | Exfiltration Over C2 Channel [T1041] |
+>[Source: MITRE ATT&CK KONNI](https://attack.mitre.org/software/S0356/)[Source: MITRE ATT&CK Kimsuky](https://attack.mitre.org/groups/G0094/)
+---

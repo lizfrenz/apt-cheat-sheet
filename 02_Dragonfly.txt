@@ -1,0 +1,110 @@
+# Threat Actor Profile: Dragonfly
+>🪰 The threat actor name Dragonfly was coined by Symantec (part of the insect-driven naming convenction).
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | Dragonfly |
+| **Aliases** | Energetic Bear, Berserk Bear, IRON LIBERTY, Crouching Yeti, TEMP.Isotope, DYMALLOY, Ghost Blizzard, BROMINE, TG-4192, ALLANITE, Koala Team, Havex |
+| **Actor Type** | APT |
+| **Suspected Origin** | Russia — FSB Center 16 |
+| **Active Since** | 2010 (earliest attributed activity) |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 Western Energy Sector Campaign**
+
+| Field | Details |
+|---|---|
+| **Date** | 2013-2014 |
+| **Campaign / Vulnerability Name** | Havex / Dragonfly Campaign |
+| **Victims / Targets** | Energy companies across US, Spain, France, Italy, Germany, Turkey, Poland; ICS/SCADA vendors |
+| **Description** | Dragonfly used spearphishing, watering hole attacks, and trojanized ICS software to target energy sector companies. The Havex RAT was deployed, including via poisoned software updates from legitimate ICS vendors, enabling reconnaissance of OT environments. |
+| **Source / Link** | Symantec — https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/dragonfly-western-energy-cyberattacks |
+
+**2.2 US Energy Grid Penetration**
+
+| Field | Details |
+|---|---|
+| **Date** | 2015-2017 |
+| **Campaign / Vulnerability Name** | Dragonfly 2.0 |
+| **Victims / Targets** | US electric utilities; UK and Irish energy companies; grid operators in Europe |
+| **Description** | The resurgent Dragonfly 2.0 phase used more targeted spearphishing against senior energy executives, watering hole attacks on sector websites, and credential harvesting. The group obtained access to operational systems including HMI screenshots of grid control panels — access that could enable destructive attacks. |
+| **Source / Link** | Symantec / US-CERT AA-17-352A — https://www.cisa.gov/news-events/alerts/2018/03/15/russian-government-cyber-activity-targeting-energy-and-other-critical |
+
+**2.3 US State and Local Government Targeting**
+
+| Field | Details |
+|---|---|
+| **Date** | 2020-09 |
+| **Campaign / Vulnerability Name** | AA20-296A (CISA/FBI Advisory) |
+| **Victims / Targets** | US state, local, territorial and tribal (SLTT) government networks; US aviation networks; election infrastructure |
+| **Description** | A CISA/FBI advisory attributed a broad campaign against SLTT governments and aviation networks to Dragonfly (Berserk Bear). The group exploited vulnerabilities including CVE-2019-19781 (Citrix), CVE-2020-0688 (Exchange), CVE-2020-1472 (Zerologon), and CVE-2018-13379 (Fortinet VPN). |
+| **Source / Link** | CISA Advisory AA20-296A — https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-296a |
+
+**2.4 German Critical Infrastructure Supply Chain Attack**
+
+| Field | Details |
+|---|---|
+| **Date** | 2020 |
+| **Campaign / Vulnerability Name** | German Energy Sector Supply Chain Compromise |
+| **Victims / Targets** | German energy and water sector companies |
+| **Description** | Berserk Bear penetrated German industrial suppliers to access downstream critical infrastructure targets. The group used supplier relationships as a trusted path into energy networks, consistent with its long-running supply chain focus. |
+| **Source / Link** | Cyware / BSI (Germany) reporting — https://cyware.com/news/berserk-bear-apt-penetrates-german-infrastructure-via-supply-chain-attacks-f790a4d5 |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Energy (electricity generation and distribution, oil and gas)
+- Industrial Control Systems (ICS) / SCADA
+- Aviation and transportation
+- Government (federal, state, local)
+- Defense and aerospace
+- Water and utilities
+
+### Notable Victim Organizations
+- US electric utilities (multiple unnamed)
+- UK and Irish energy grid operators
+- German energy and industrial suppliers
+- US SLTT government entities (2020)
+
+### Technologies & CVEs Exploited
+- CVE-2019-19781 (Citrix ADC/Gateway)
+- CVE-2020-0688 (Microsoft Exchange)
+- CVE-2020-1472 (Zerologon/Netlogon)
+- CVE-2018-13379 (Fortinet FortiOS VPN)
+- CVE-2019-10149 (Exim MTA)
+- Havex RAT (custom ICS targeting tool)
+- Trojanized ICS vendor software
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Spearphishing Attachment [T1566.001] |
+| Initial Access | Drive-by Compromise [T1189] |
+| Initial Access | Supply Chain Compromise: Compromise Software Supply Chain [T1195.002] |
+| Initial Access | Valid Accounts [T1078] |
+| Initial Access | Trusted Relationship [T1199] |
+| Execution | User Execution [T1204] |
+| Persistence | Valid Accounts [T1078] |
+| Credential Access | Brute Force [T1110] |
+| Credential Access | Input Capture [T1056] |
+| Discovery | Network Sniffing [T1040] |
+| Discovery | Remote System Discovery [T1018] |
+| Collection | Screen Capture [T1113] |
+| Collection | Data from Information Repositories [T1213] |
+| Defense Evasion | Indicator Removal on Host [T1070] |
+| Command and Control | Commonly Used Port [T1043] |
+| Exfiltration | Exfiltration Over C2 Channel [T1041] |
+>[Source: MITRE ATT&CK](https://attack.mitre.org/groups/G0035/)
+---

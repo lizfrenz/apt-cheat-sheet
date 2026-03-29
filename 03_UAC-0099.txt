@@ -1,0 +1,97 @@
+# Threat Actor Profile: UAC-0099
+>⚠️ LIMITED INTELLIGENCE WARNING 
+Naming Authority: CERT-UA (Computer Emergency Response Team of Ukraine).
+Origin Timeframe: The group was first formally documented and named by CERT-UA in May 2023 (specifically in Advisory #6710).
+Designation Meaning: The "UAC" prefix stands for Ukraine Activity Croup, a convention used by CERT-UA to track malicious cyber activity specifically targeting Ukrainian entities.
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | UAC-0099 |
+| **Aliases** | None publicly documented |
+| **Actor Type** | APT |
+| **Suspected Origin** | Russia (assessed with moderate confidence; state-nexus probable based on targeting and supporting role in Sandworm operations) |
+| **Active Since** | 2022 |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 Initial Espionage Campaign Against Ukrainian Media and Government**
+
+| Field | Details |
+|---|---|
+| **Date** | 2023-06 |
+| **Campaign / Vulnerability Name** | LONEPAGE Campaign — CERT-UA#6569 |
+| **Victims / Targets** | Ukrainian state organizations, media representatives |
+| **Description** | CERT-UA documented UAC-0099's first known major campaign using phishing emails with HTA, RAR, and LNK file attachments to deliver LONEPAGE, a VBS-based malware that beacons to a C2 server for command execution. The group gained unauthorized remote access to dozens of Ukrainian computers and focused on intelligence collection. |
+| **Source / Link** | CERT-UA / Deep Instinct — https://www.deepinstinct.com/blog/threat-actor-uac-0099-continues-to-target-ukraine |
+
+**2.2 WinRAR Zero-Day Exploitation**
+
+| Field | Details |
+|---|---|
+| **Date** | 2023-08 |
+| **Campaign / Vulnerability Name** | CVE-2023-38831 Exploitation |
+| **Victims / Targets** | Ukrainian corporate employees working remotely for non-Ukrainian companies |
+| **Description** | UAC-0099 rapidly exploited CVE-2023-38831 in WinRAR just three days after the patch was released, using court summons-themed lures to deliver LONEPAGE. The group impersonated the Lviv city court, demonstrating familiarity with Ukrainian administrative structures and awareness of the vulnerability before public disclosure. |
+| **Source / Link** | Deep Instinct — https://www.deepinstinct.com/blog/threat-actor-uac-0099-continues-to-target-ukraine |
+
+**2.3 Expanded Government and Defense Targeting**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024-12 / 2025-08 |
+| **Campaign / Vulnerability Name** | MATCHBOIL/MATCHWOK/DRAGSTARE Campaign — CERT-UA#12463 |
+| **Victims / Targets** | Ukrainian state bodies (forestry, forensic, manufacturing), defense forces, defense-industrial complex |
+| **Description** | UAC-0099 transitioned to a new C# toolset (MATCHBOIL loader, MATCHWOK backdoor, DRAGSTARE stealer). ESET confirmed the group acts as an initial access broker for Sandworm, breaching networks and handing off validated targets for destructive follow-on operations including data wipers. |
+| **Source / Link** | CERT-UA / ESET / Security Affairs — https://securityaffairs.com/180896/apt/cert-ua-warns-of-uac-0099-phishing-attacks-targeting-ukraines-defense-sector.html |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Government (Ukrainian state bodies)
+- Defense and defense-industrial complex
+- Media and journalism
+- Forestry and agriculture (2025)
+- Forensic and manufacturing institutions
+
+### Notable Victim Organizations
+- Multiple Ukrainian state agencies (unnamed)
+- Ukrainian defense enterprises
+- Ukrainian media organizations
+
+### Technologies & CVEs Exploited
+- CVE-2023-38831 (WinRAR archive processing)
+- Cloudflare services (C2 infrastructure hosting)
+- UKR.NET email service (phishing delivery)
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Spearphishing Attachment [T1566.001] |
+| Initial Access | Spearphishing Link [T1566.002] |
+| Execution | Command and Scripting Interpreter: PowerShell [T1059.001] |
+| Execution | Command and Scripting Interpreter: Visual Basic [T1059.005] |
+| Execution | User Execution: Malicious File [T1204.002] |
+| Persistence | Scheduled Task/Job: Scheduled Task [T1053.005] |
+| Persistence | Boot or Logon Autostart Execution: Registry Run Keys [T1547.001] |
+| Defense Evasion | Obfuscated Files or Information [T1027] |
+| Defense Evasion | Deobfuscate/Decode Files or Information [T1140] |
+| Defense Evasion | Abuse Elevation Control Mechanism [T1548] |
+| Credential Access | Credentials from Web Browsers [T1555.003] |
+| Collection | Data Staged [T1074] |
+| Collection | Screen Capture [T1113] |
+| Exfiltration | Exfiltration Over C2 Channel [T1041] |
+| Command and Control | Application Layer Protocol: Web Protocols [T1071.001] |
+| Command and Control | Ingress Tool Transfer [T1105] |
+>[Source: CERT-UA advisories](https://medium.com/h7w/analyzing-uac-0099-tactics-techniques-and-procedures-2023-2025-296f6ad672fc)
+---

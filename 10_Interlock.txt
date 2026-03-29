@@ -1,0 +1,112 @@
+# Threat Actor Profile: Interlock
+>🔒 The name drives from file extension: When Interlock ransomware encrypts a victim’s files, it renames them to include the .interlock.
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | Interlock |
+| **Aliases** | Nefarious Mantis |
+| **Actor Type** | eCrime |
+| **Suspected Origin** | Unknown / Not publicly documented (possible Rhysida / Vice Society lineage) |
+| **Active Since** | 2024-09 |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**Event 1 — Texas Tech University Health Sciences Center Breach (2024)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024-09 |
+| **Campaign / Vulnerability Name** | Texas Tech University HSCA Data Breach |
+| **Victims / Targets** | Texas Tech University Health Sciences Center; approximately 1.46 million patient records compromised |
+| **Description** | One of Interlock's earliest high-profile attacks targeted a healthcare academic institution, demonstrating the group's intent to pursue sensitive data in regulated sectors. The breach involved both data exfiltration and encryption, with stolen records including patient medical information. |
+| **Source / Link** | Arctic Wolf / Quorum Cyber — https://arcticwolf.com/resources/blog/threat-actor-profile-interlock-ransomware/ |
+
+**Event 2 — DaVita Kidney Care Breach (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-04 |
+| **Campaign / Vulnerability Name** | DaVita Ransomware Attack |
+| **Victims / Targets** | DaVita Inc. (Fortune 500 dialysis provider); 200,000+ patients; 1.5 TB of data stolen |
+| **Description** | Interlock's most impactful known attack targeted DaVita, one of the largest kidney care providers in the US. The group exfiltrated approximately 700,000 files including patient data, insurance information, and financial records. When DaVita did not pay the ransom, Interlock leaked the data on its "Worldwide Secrets Blog" dark web site. |
+| **Source / Link** | Arctic Wolf / Quorum Cyber — https://arcticwolf.com/resources/blog/threat-actor-profile-interlock-ransomware/ |
+
+**Event 3 — City of St. Paul, Minnesota Attack (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-07 |
+| **Campaign / Vulnerability Name** | City of St. Paul Ransomware Attack |
+| **Victims / Targets** | City of St. Paul, Minnesota government; 3,500 city employees' personal data at risk |
+| **Description** | Interlock took key city systems offline in a ransomware attack. The city confirmed it did not pay the ransom. PRODAFT had detected Interlock pre-attack activity 10 days before, providing advance warning. Interlock publicly claimed responsibility in August 2025. |
+| **Source / Link** | Arctic Wolf — https://arcticwolf.com/resources/blog/threat-actor-profile-interlock-ransomware/ |
+
+**Event 4 — CISA/FBI Joint Advisory — Malware Upgrade (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-07-22 |
+| **Campaign / Vulnerability Name** | CISA Advisory AA25-203A |
+| **Victims / Targets** | Organizations across North America and Europe in healthcare, education, government, technology |
+| **Description** | CISA, FBI, HHS, and MS-ISAC issued a joint advisory confirming Interlock had upgraded its encryptors for both Windows and Linux, with enhanced VM encryption capabilities. The advisory noted the group added ClickFix social engineering in May 2025, and that it operates without affiliates in a closed model. |
+| **Source / Link** | CISA Advisory AA25-203A — https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-203a |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Healthcare (primary)
+- Education and higher education
+- Government
+- Technology and manufacturing
+- Defense contractors
+- Transportation and logistics
+
+### Notable Victim Organizations
+- DaVita Inc. (Fortune 500 kidney care)
+- Texas Tech University Health Sciences Center
+- City of St. Paul, Minnesota
+- National Defense Corp. (reported)
+
+### Technologies & CVEs Exploited
+- Drive-by downloads from compromised legitimate websites
+- ClickFix social engineering (added May 2025)
+- Compromised credentials for initial access
+- Custom ransomware (Windows and Linux/FreeBSD variants)
+- NodeSnake RAT (custom)
+- LummaStealer, BerserkStealer infostealers
+- RDP, AnyDesk, PuTTY (lateral movement)
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Drive-by Compromise [T1189] |
+| Initial Access | Valid Accounts [T1078] |
+| Initial Access | Phishing [T1566] |
+| Execution | Command and Scripting Interpreter: PowerShell [T1059.001] |
+| Execution | User Execution: Malicious Link [T1204.001] |
+| Persistence | Scheduled Task/Job [T1053] |
+| Defense Evasion | Obfuscated Files or Information [T1027] |
+| Defense Evasion | Virtualization/Sandbox Evasion [T1497] |
+| Credential Access | Credentials from Web Browsers [T1555.003] |
+| Lateral Movement | Remote Services: Remote Desktop Protocol [T1021.001] |
+| Lateral Movement | Remote Access Software [T1219] |
+| Collection | Data Staged [T1074] |
+| Exfiltration | Exfiltration Over Web Service [T1567] |
+| Exfiltration | Exfiltration Over C2 Channel [T1041] |
+| Impact | Data Encrypted for Impact [T1486] |
+| Impact | Inhibit System Recovery [T1490] |
+| Impact | Data Destruction [T1485] |
+>[Source: CISA Advisory AA25-203A](https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-203a)
+---

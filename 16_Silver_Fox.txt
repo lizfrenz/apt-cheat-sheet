@@ -1,0 +1,113 @@
+# Threat Actor Profile: Silver Fox
+
+>⚠️ LIMITED INTELLIGENCE WARNING Discovered by Chinese security firm ThreatBook. Known for the fast evolving techniques. 
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | Silver Fox |
+| **Aliases** | Void Arachne, The Great Thief of Valley, Silver Fox APT |
+| **Actor Type** | APT (note: exhibits hybrid financially motivated / state espionage characteristics — possible state-sponsored group masquerading as eCrime) |
+| **Suspected Origin** | China (assessed with moderate confidence based on infrastructure, language targeting, and Alibaba Cloud usage) |
+| **Active Since** | 2024 (first documented; earlier activity likely under different tracking) |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 Chinese-Speaking User Campaign via Winos 4.0 / ValleyRAT (2024)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024-06 |
+| **Campaign / Vulnerability Name** | ValleyRAT / Winos 4.0 Campaign |
+| **Victims / Targets** | Chinese-speaking individuals and organizations; government entities, cybersecurity companies, e-commerce, finance, gaming companies |
+| **Description** | Silver Fox (tracked by Trend Micro as Void Arachne) distributed ValleyRAT (aka Winos 4.0) through SEO poisoning, Telegram channels, and social media, disguising the malware as popular AI applications, VPN software, and gaming tools. The campaign targeted Chinese-speaking users circumventing the Great Firewall. ValleyRAT is a modular backdoor enabling keystroke logging, security bypass, screen capture, and data exfiltration. |
+| **Source / Link** | Trend Micro / Forescout Vedere Labs — https://industrialcyber.co/medical/forescout-details-silver-fox-campaign-targeting-healthcare-with-backdoors-keyloggers-crypto-miners/ |
+
+**2.2 Healthcare Sector Targeting via DICOM Viewer (2024–2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024-07 / 2025-01 |
+| **Campaign / Vulnerability Name** | DICOM Viewer Trojanization Campaign |
+| **Victims / Targets** | Healthcare organizations in US and Canada; patients and hospitals via Philips DICOM medical imaging viewers |
+| **Description** | Forescout Vedere Labs identified 29 malware samples (July 2024–January 2025) masquerading as Philips DICOM viewers. The MediaViewerLauncher.exe first-stage malware performed C2 beaconing, downloaded encrypted payloads from Alibaba Cloud, and established persistence via Windows Scheduled Tasks. Final payloads included ValleyRAT backdoor, a keylogger, and an XMRig cryptocurrency miner. |
+| **Source / Link** | Forescout Vedere Labs / Infosecurity Magazine — https://www.infosecurity-magazine.com/news/chinese-silver-fox-backdoors/ |
+
+**2.3 Microsoft Teams SEO Poisoning with Russian False Flag (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-11 |
+| **Campaign / Vulnerability Name** | teamscn[.]com Campaign |
+| **Victims / Targets** | Chinese-speaking users and organizations, including Western companies operating in China |
+| **Description** | Silver Fox used a fake Microsoft Teams website (teamscn[.]com) to distribute ValleyRAT loaders, incorporating Cyrillic characters in the ZIP filename to create a Russian false flag and complicate attribution. ReliaQuest linked this to Silver Fox via infrastructure pivot analysis connecting the domain to prior Telegram phishing sites targeting Chinese-speaking users. |
+| **Source / Link** | ReliaQuest — https://reliaquest.com/blog/threat-spotlight-silver-foxs-russian-ruse-fake-microsoft-teams-attack/ |
+
+**2.4 South Asia Tax Lure Campaign (2025–2026)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-2026 |
+| **Campaign / Vulnerability Name** | Tax Authority Impersonation Campaign |
+| **Victims / Targets** | South Asian financial sector; organizations in India and surrounding region |
+| **Description** | Silver Fox transitioned from ValleyRAT to abusing a misconfigured Chinese RMM tool, then to a custom Python-based stealer disguised as a WhatsApp application. Lures impersonated national tax authorities and payroll documents. Sekoia TDR confirmed the evolution across 2025–2026, noting the group increasingly blends intelligence collection with financial crime. |
+| **Source / Link** | Sekoia TDR — https://blog.sekoia.io/silver-fox-the-only-tax-audit-where-the-fine-print-installs-malware/ |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Healthcare (medical imaging platforms)
+- Government and law enforcement
+- Cybersecurity companies
+- E-commerce and financial services
+- Gaming
+- Chinese-speaking individuals globally (primary demographic)
+
+### Notable Victim Organizations
+- Healthcare delivery organizations (HDOs) using Philips DICOM viewers
+- Chinese-speaking enterprises in US, Canada
+- South Asian financial organizations
+
+### Technologies & CVEs Exploited
+- SEO poisoning (Google Search manipulation)
+- Trojanized legitimate software (DICOM viewers, Teams, AI apps, VPN clients)
+- ValleyRAT / Winos 4.0 (modular RAT derived from Gh0st RAT)
+- TrueSight2 vulnerable driver (AV evasion)
+- VMProtect obfuscation
+- CleverSoar installer, Nidhogg rootkit (late 2024)
+- Alibaba Cloud for payload hosting
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Drive-by Compromise [T1189] |
+| Initial Access | Phishing: Spearphishing Attachment [T1566.001] |
+| Execution | Shared Modules [T1129] |
+| Execution | User Execution: Malicious File [T1204.002] |
+| Persistence | Scheduled Task/Job: Scheduled Task [T1053.005] |
+| Persistence | Boot or Logon Autostart Execution: Registry Run Keys [T1547.001] |
+| Defense Evasion | Subvert Trust Controls: Install Root Certificate [T1553.004] |
+| Defense Evasion | Rootkit [T1014] |
+| Defense Evasion | Obfuscated Files or Information [T1027] |
+| Defense Evasion | Impair Defenses: Disable or Modify Tools [T1562.001] |
+| Defense Evasion | Masquerading [T1036] |
+| Credential Access | Input Capture: Keylogging [T1056.001] |
+| Collection | Screen Capture [T1113] |
+| Collection | Credentials from Web Browsers [T1555.003] |
+| Command and Control | Application Layer Protocol: Web Protocols [T1071.001] |
+| Exfiltration | Exfiltration Over C2 Channel [T1041] |
+| Impact | Resource Hijacking [T1496] |
+>[Source: Sekoia TDR](https://blog.sekoia.io/silver-fox-the-only-tax-audit-where-the-fine-print-installs-malware/)
+
+---

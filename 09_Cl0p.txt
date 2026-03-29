@@ -1,0 +1,111 @@
+# Threat Actor Profile: Cl0p
+> The name "Cl0p" for the ransomware group originates from the word "clop" itself, which is often used in Russian-language hacker forums to describe malware or activities related to data encryption. A clop means a tick or more commonly a bedbug in Russian.
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | Cl0p |
+| **Aliases** | TA505, FIN11, UNC2546, UNC2582, UNC4857, Lace Tempest |
+| **Actor Type** | eCrime |
+| **Suspected Origin** | Russia / Russian-speaking criminal group (assessed with high confidence; avoids encrypting systems with Russian/Azerbaijani keyboard layouts) |
+| **Active Since** | 2019 (Cl0p ransomware first observed); TA505 active since ~2014 |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**Event 1 — Accellion FTA Zero-Day Campaign (2020–2021)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2020-12 / 2021-01 |
+| **Campaign / Vulnerability Name** | CVE-2021-27101 through CVE-2021-27104 (Accellion FTA) |
+| **Victims / Targets** | Reserve Bank of New Zealand, Bombardier, Kroger, Qualys, University of Colorado, Jones Day, and ~100 others |
+| **Description** | Cl0p/TA505 exploited four zero-day vulnerabilities in Accellion's legacy File Transfer Appliance to steal data from major global organizations. Rather than encrypting systems, the group focused on pure data extortion, threatening to publish stolen files on the CL0P^_-LEAKS dark web site. |
+| **Source / Link** | CISA / Mandiant — https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-055a |
+
+**Event 2 — GoAnywhere MFT Zero-Day (2023)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2023-01 |
+| **Campaign / Vulnerability Name** | CVE-2023-0669 (Fortra GoAnywhere MFT) |
+| **Victims / Targets** | Approximately 130 organizations across healthcare, financial services, government |
+| **Description** | Cl0p exploited a zero-day in the GoAnywhere managed file transfer platform, exfiltrating data from ~130 victims over 10 days. Ransom notes were sent to senior executives identified via open-source research, with no lateral movement beyond the GoAnywhere platform itself. |
+| **Source / Link** | CISA Advisory AA23-158A — https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a |
+
+**Event 3 — MOVEit Transfer Zero-Day Campaign (2023)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2023-05 / 2023-06 |
+| **Campaign / Vulnerability Name** | CVE-2023-34362 (Progress MOVEit Transfer) |
+| **Victims / Targets** | ~2,000 organizations; US federal agencies (Department of Energy, HHS), BBC, British Airways, Shell, PwC, Siemens Energy |
+| **Description** | Cl0p exploited a critical SQL injection zero-day in the MOVEit Transfer platform, deploying the LEMURLOOT web shell to steal data at scale. The campaign impacted organizations in over 40 countries and resulted in a $10M US State Department bounty for information linking the group to a foreign government. The group publicly stated it deleted government and military data. |
+| **Source / Link** | CISA / FBI Advisory AA23-158A — https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a |
+
+**Event 4 — Cleo File Transfer Platform Exploitation (2024)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024-12 |
+| **Campaign / Vulnerability Name** | Cleo Harmony / VLTrader / LexiCom Zero-Days |
+| **Victims / Targets** | Organizations using Cleo managed file transfer products |
+| **Description** | Cl0p claimed responsibility for exploiting zero-day vulnerabilities in Cleo's file transfer platforms, continuing its pattern of targeting MFT software. The group demonstrated consistent operational focus: identify widely deployed enterprise file transfer tools, develop or acquire zero-day exploits, and execute mass data theft campaigns. |
+| **Source / Link** | BleepingComputer — https://www.bleepingcomputer.com/news/security/clop-ransomware-claims-responsisbility-for-cleo-data-theft-attacks/ |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Financial services and banking
+- Healthcare
+- Government (federal and state agencies)
+- Manufacturing and energy
+- Legal and professional services
+- Technology and managed service providers
+
+### Notable Victim Organizations
+- US federal agencies (Department of Energy, HHS)
+- BBC, British Airways, Shell, PwC, Siemens Energy (MOVEit)
+- Reserve Bank of New Zealand (Accellion)
+- Approximately 2,000 MOVEit victims globally
+
+### Technologies & CVEs Exploited
+- CVE-2021-27101 to CVE-2021-27104 (Accellion FTA)
+- CVE-2021-35211 (SolarWinds Serv-U)
+- CVE-2023-0669 (GoAnywhere MFT)
+- CVE-2023-34362 (MOVEit Transfer)
+- Cleo Harmony/VLTrader/LexiCom zero-days (2024)
+- LEMURLOOT web shell (custom MOVEit payload)
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Exploit Public-Facing Application [T1190] |
+| Initial Access | Phishing: Spearphishing Attachment [T1566.001] |
+| Initial Access | Valid Accounts [T1078] |
+| Execution | Command and Scripting Interpreter [T1059] |
+| Execution | Server Software Component: Web Shell [T1505.003] |
+| Persistence | Boot or Logon Initialization Scripts [T1037] |
+| Persistence | Scheduled Task/Job [T1053] |
+| Privilege Escalation | Create or Modify System Process [T1543] |
+| Defense Evasion | Subvert Trust Controls: Code Signing [T1553.002] |
+| Defense Evasion | Impair Defenses: Disable or Modify Tools [T1562.001] |
+| Defense Evasion | Indicator Removal: File Deletion [T1070.004] |
+| Credential Access | Remote Services: Remote Desktop Protocol [T1021.001] |
+| Lateral Movement | Remote Services [T1021] |
+| Collection | Data Staged [T1074] |
+| Exfiltration | Exfiltration Over Web Service [T1567] |
+| Impact | Data Encrypted for Impact [T1486] |
+| Impact | Inhibit System Recovery [T1490] |
+>[Source: Blackpoint Cyber Clop Threat Profile](https://blackpointcyber.com/threat-profile/clop-ransomware/)
+---

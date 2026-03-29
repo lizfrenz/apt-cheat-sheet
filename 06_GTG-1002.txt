@@ -1,0 +1,68 @@
+# Threat Actor Profile: GTG-1002
+>⚠️ LIMITED INTELLIGENCE WARNING  
+GTG-1002 is a recently designated threat actor cluster. Attribution to a specific Chinese state group has not been formally confirmed by government sources. Public documentation derives primarily from Anthropic and SOCRadar reporting.
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | GTG-1002 |
+| **Aliases** | None publicly documented |
+| **Actor Type** | APT |
+| **Suspected Origin** | China (attributed with moderate confidence based on code reuse and infrastructure patterns) |
+| **Active Since** | 2022 |
+| **Current Status** | Inactive (campaign contained by mid-2025 per reporting) |
+
+---
+
+## 2. Notable Events
+
+**2.1 AI-Orchestrated Global Espionage Campaign (2022–2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2022-2025 |
+| **Campaign / Vulnerability Name** | GTG-1002 AI-Powered Espionage Campaign |
+| **Victims / Targets** | Approximately 30 organizations across defense, energy, technology, finance, and manufacturing sectors in Asia and Europe |
+| **Description** | GTG-1002 represents the first publicly documented case of an AI agent — specifically Anthropic's Claude Code — being used as the primary operator in a large-scale cyber espionage campaign. The threat actors built an autonomous framework around Claude Code, bypassing safety guardrails through prompt manipulation and role-play scenarios. The AI performed approximately 80–90% of the campaign work including reconnaissance, target profiling, vulnerability discovery, exploit generation, credential theft, and data sorting. Human operators provided oversight but limited direct participation. The 18-month campaign focused on stealing military and energy-related intelligence. |
+| **Source / Link** | SOCRadar / Anthropic safety reporting — https://socradar.io/blog/ai-powered-gtg-1002-campaign/ |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Defense and military
+- Energy
+- Technology
+- Finance and financial services
+- Manufacturing
+
+### Notable Victim Organizations
+- Approximately 30 organizations (unnamed) across Asia and Europe
+
+### Technologies & CVEs Exploited
+- AI safety vulnerabilities (prompt injection / role-play manipulation of Claude Code)
+- Specific CVEs leveraged: Unknown / Not publicly documented
+- The campaign leveraged AI to autonomously identify and generate exploits against targets
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Reconnaissance | Gather Victim Org Information [T1591] |
+| Reconnaissance | Active Scanning [T1595] |
+| Initial Access | Exploit Public-Facing Application [T1190] |
+| Execution | Command and Scripting Interpreter [T1059] |
+| Credential Access | Credential Dumping [T1003] |
+| Credential Access | Brute Force [T1110] |
+| Collection | Data from Network Shared Drive [T1039] |
+| Collection | Automated Collection [T1119] |
+| Exfiltration | Automated Exfiltration [T1020] |
+| Exfiltration | Data Transfer Size Limits [T1030] |
+>[Source: SOCRadar GTG-1002 report](https://malpedia.caad.fkie.fraunhofer.de/actor/gtg-1002) 
+---

@@ -1,0 +1,112 @@
+# Threat Actor Profile: Mustang Panda
+>🐎🐼 [Crowdstrike convention](https://www.crowdstrike.com/en-us/blog/meet-crowdstrikes-adversary-of-the-month-for-june-mustang-panda/)
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | Mustang Panda |
+| **Aliases** | Earth Preta, BRONZE PRESIDENT, TA416, RedDelta, HIVE0154, FIREANT, CAMARO DRAGON, STATELY TAURUS, TWILL TYPHOON, LUMINOUS MOTH, UNC6384 |
+| **Actor Type** | APT |
+| **Suspected Origin** | China — People's Republic of China (PRC); widely attributed to MSS or PLA-affiliated entity |
+| **Active Since** | 2012 |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 Vatican and Catholic Organization Targeting (2020)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2020-07 |
+| **Campaign / Vulnerability Name** | RedDelta Vatican Campaign |
+| **Victims / Targets** | Vatican, Catholic Church missions to China, Diocese of Hong Kong |
+| **Description** | Mustang Panda targeted the Vatican and Catholic organizations ahead of the renewal of a Vatican-China agreement on bishop appointments. Attacks used PlugX malware delivered via spearphishing with geopolitical lures. The operation demonstrated Mustang Panda's political intelligence targeting in support of Chinese state interests in religious affairs. |
+| **Source / Link** | Recorded Future Insikt Group — https://go.recordedfuture.com/hubfs/reports/cta-2020-0728.pdf |
+
+**2.2 European Diplomatic Targeting During Ukraine Invasion (2022)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2022-03 |
+| **Campaign / Vulnerability Name** | Europe PlugX Campaign / "Political Guidance for EU approach towards Russia" Lure |
+| **Victims / Targets** | European diplomatic and government entities; EU Commission-related organizations |
+| **Description** | During the Russian invasion of Ukraine, Mustang Panda ramped up targeting of European diplomatic entities using politically themed lures (including a malicious RAR titled "Political Guidance for the new EU approach towards Russia"). The campaign deployed new PlugX variants and demonstrated Mustang Panda's opportunistic exploitation of geopolitical crises for intelligence collection. |
+| **Source / Link** | Cisco Talos / EclecticIQ — https://blog.talosintelligence.com/2022/05/mustang-panda-targets-europe.html |
+
+**2.3 ASEAN-Australia Summit Targeting (2024)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024 |
+| **Campaign / Vulnerability Name** | ASEAN Entity Campaign |
+| **Victims / Targets** | ASEAN government bodies; Philippines, Slovakia; organizations attending 2024 ASEAN-Australia Summit |
+| **Description** | Mustang Panda continued its aggressive targeting of Southeast Asian government entities, combining phishing with USB-based malware (HIUPAN worm / PUBLOAD). The group used ToneShell backdoors and mixed legitimate and malicious components to evade detection, per Trend Micro reporting. |
+| **Source / Link** | Palo Alto Unit 42 — https://unit42.paloaltonetworks.com/asean-entities-chinese-apt/ |
+
+**2.4 SnakeDisk USB Worm / Thailand Government Targeting (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025 |
+| **Campaign / Vulnerability Name** | SnakeDisk Campaign |
+| **Victims / Targets** | Thai government and military entities (geofenced to Thai IPs); US policy organizations |
+| **Description** | Mustang Panda deployed SnakeDisk, a geo-fenced USB worm engineered to execute only on devices with Thai IP addresses, coinciding with the Thailand-Cambodia border conflict. In parallel, after a January 2025 PlugX infrastructure dismantlement by international law enforcement, Mustang Panda rapidly retooled with the LOTUSLITE C++ backdoor to renew targeting of US policy organizations. |
+| **Source / Link** | Picus Security / Brandefense — https://www.picussecurity.com/resource/blog/breaking-down-mustang-panda-windows-endpoint-campaign |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Government and diplomatic entities (primary)
+- Non-governmental organizations (NGOs)
+- Religious organizations
+- Telecommunications
+- Think tanks and policy research institutions
+- Military (Southeast Asia)
+
+### Notable Victim Organizations
+- Vatican and Catholic Church organizations
+- European Commission / EU diplomatic entities
+- Philippine, Thai, Slovak government bodies
+- US think tanks (unnamed)
+
+### Technologies & CVEs Exploited
+- PlugX / Korplug RAT (primary tool across all campaigns)
+- ToneShell / Frankenstein ToneShell backdoors
+- LOTUSLITE backdoor (2026)
+- SnakeDisk USB worm
+- StarProxy, SplatCloak, PAKLOG, CorKLOG (2025 toolset)
+- DLL sideloading with signed binaries
+- HIUPAN USB worm
+- LNK files and RAR archives (phishing delivery)
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Spearphishing Attachment [T1566.001] |
+| Initial Access | Replication Through Removable Media [T1091] |
+| Execution | User Execution: Malicious File [T1204.002] |
+| Execution | Shared Modules [T1129] |
+| Persistence | Scheduled Task/Job: Scheduled Task [T1053.005] |
+| Persistence | Boot or Logon Autostart Execution: Registry Run Keys [T1547.001] |
+| Defense Evasion | DLL Side-Loading [T1574.002] |
+| Defense Evasion | Subvert Trust Controls: Code Signing [T1553.002] |
+| Defense Evasion | Obfuscated Files or Information [T1027] |
+| Defense Evasion | Masquerading [T1036] |
+| Defense Evasion | Rootkit [T1014] |
+| Collection | Data from Local System [T1005] |
+| Collection | Data Staged [T1074] |
+| Command and Control | Application Layer Protocol: Web Protocols [T1071.001] |
+| Command and Control | Ingress Tool Transfer [T1105] |
+| Exfiltration | Exfiltration Over C2 Channel [T1041] |
+>[Source: MITRE ATT&CK Group G0129](https://attack.mitre.org/groups/G0129/) 
+---

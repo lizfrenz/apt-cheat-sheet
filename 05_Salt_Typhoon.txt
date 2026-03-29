@@ -1,0 +1,109 @@
+# Threat Actor Profile: Salt Typhoon
+>🌀 Microsoft naming conventions generally use weather-related terms.
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | Salt Typhoon |
+| **Aliases** | FamousSparrow, GhostEmperor, Earth Estries, UNC2286, OPERATOR PANDA, RedMike, UNC5807 |
+| **Actor Type** | APT |
+| **Suspected Origin** | China — Ministry of State Security (MSS); Sichuan Juxinhe Network Technology sanctioned by US Treasury in January 2025 |
+| **Active Since** | 2021 (earliest attributed activity; likely earlier) |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 US Telecommunications Compromise**
+
+| Field | Details |
+|---|---|
+| **Date** | 2023-2024 |
+| **Campaign / Vulnerability Name** | US Telecom Espionage Campaign |
+| **Victims / Targets** | AT&T, Verizon, T-Mobile, Lumen, Consolidated Communications, Windstream, Spectrum; nine US telecoms total; CALEA wiretap systems |
+| **Description** | Salt Typhoon infiltrated core routing infrastructure across major US broadband providers, accessing subscriber metadata (call records, timestamps, IP addresses) for over one million users in the Washington DC metro area. Critically, the group accessed CALEA lawful intercept systems, enabling surveillance of law enforcement wiretap targets. Audio recordings of Trump and Harris campaign staff were obtained. The intrusion was estimated to have been underway for one to two years prior to discovery. |
+| **Source / Link** | CISA Advisory AA25-239A — https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a |
+
+**2.2 US Army National Guard Compromise**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024 |
+| **Campaign / Vulnerability Name** | US Military Network Compromise |
+| **Victims / Targets** | A US state's Army National Guard |
+| **Description** | Salt Typhoon gained entry through a weakly configured remote access service and spread across the environment, obtaining administrator credentials, network diagrams, and traffic logs describing Guard system interconnections across states. |
+| **Source / Link** | NJCCIC Salt Typhoon Profile — https://www.cyber.nj.gov/threat-landscape/nation-state-threat-analysis-reports/china-linked-cyber-operations-targeting-us-critical-infrastructure/salt-typhoon | TECHCRUNCH — https://techcrunch.com/2024/12/04/senators-say-u-s-military-is-failing-to-secure-its-phones-from-foreign-spies/ |
+
+**2.3 Canadian Telecom Breach**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-02 |
+| **Campaign / Vulnerability Name** | Canadian Telecom Espionage |
+| **Victims / Targets** | Unnamed Canadian telecommunications company |
+| **Description** | Salt Typhoon extended its telecom espionage campaign to Canada, consistent with a confirmed pattern of targeting Five Eyes allies. Australian ASIO director-general separately confirmed Salt Typhoon probed Australian telecommunications networks in November 2025. |
+| **Source / Link** | CBC News / Australian ASIO statements — https://en.wikipedia.org/wiki/Salt_Typhoon |
+
+**2.4 Viasat Compromise**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-06 |
+| **Campaign / Vulnerability Name** | Satellite Communications Targeting |
+| **Victims / Targets** | Viasat (US satellite communications company) |
+| **Description** | Salt Typhoon was attributed to the compromise of Viasat, a US satellite internet provider. Satellite communications represent a strategic expansion of Salt Typhoon's targeting from terrestrial telecoms. |
+| **Source / Link** | Industry reporting cited in Wikipedia — https://en.wikipedia.org/wiki/Salt_Typhoon |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Telecommunications (primary focus)
+- Government and defense
+- Satellite communications
+- Hotels and lodging (historical)
+- Law enforcement and intelligence infrastructure (CALEA systems)
+
+### Notable Victim Organizations
+- AT&T, Verizon, T-Mobile, Lumen Technologies, Windstream, Consolidated Communications, Spectrum
+- Viasat
+- Unnamed Canadian and Australian telecoms
+
+### Technologies & CVEs Exploited
+- CVE-2023-20198 (Cisco IOS XE authentication bypass)
+- CVE-2023-20273 (Cisco IOS XE command injection — post-auth)
+- CVE-2023-46805 (Ivanti Connect Secure authentication bypass)
+- CVE-2024-21887 (Ivanti Connect Secure command injection)
+- CVE-2024-3400 (Palo Alto PAN-OS GlobalProtect RCE)
+- CVE-2021-26855 (Microsoft Exchange ProxyLogon)
+- CVE-2018-0171 (Cisco Smart Install)
+- SNMP community string cracking from exfiltrated config files
+- Custom tools: GhostSpider backdoor, JumbledPath, SnappyBee, Masol RAT, Demodex rootkit
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Exploit Public-Facing Application [T1190] |
+| Initial Access | Valid Accounts: Local Accounts [T1078.003] |
+| Execution | Command and Scripting Interpreter: PowerShell [T1059.001] |
+| Persistence | Server Software Component: Web Shell [T1505.003] |
+| Persistence | Scheduled Task/Job [T1053] |
+| Defense Evasion | Indicator Removal: Clear Linux or Mac System Logs [T1070.002] |
+| Defense Evasion | Masquerading [T1036] |
+| Credential Access | Brute Force: Password Cracking [T1110.002] |
+| Discovery | Gather Victim Network Information: Network Topology [T1590.004] |
+| Discovery | Network Service Discovery [T1046] |
+| Lateral Movement | Remote Services [T1021] |
+| Collection | Data from Configuration Repository: Network Device Configuration Dump [T1602.002] |
+| Exfiltration | Exfiltration Over Alternative Protocol [T1048] |
+| Command and Control | Protocol Tunneling [T1572] |
+>[Source: MITRE ATT&CK](https://attack.mitre.org/groups/G1020)
+---

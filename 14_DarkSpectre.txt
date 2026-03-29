@@ -1,0 +1,93 @@
+# Threat Actor Profile: DarkSpectre
+
+>⚠️ LIMITED INTELLIGENCE WARNING DarkSpectre was first publicly named by Koi Security in late 2025.The moniker refers to the group's "sleeper" strategy. Malicious code is disguised within benign-looking extensions—such as tab managers, translators, or video downloaders—that operate normally for years to build trust before turning into spyware, a tactic resembling a "phantom" or "spectre" threat that is hard to detect.
+
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | DarkSpectre |
+| **Aliases** | ShadyPanda (sub-campaign), GhostPoster (sub-campaign), Zoom Stealer (sub-campaign) |
+| **Actor Type** | APT |
+| **Suspected Origin** | China (assessed with moderate confidence; Alibaba Cloud C2 infrastructure; nation-state operational scale) |
+| **Active Since** | 2018 (earliest sub-campaign activity; seven-year operational footprint) |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 ShadyPanda Browser Extension Campaign (2018–2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2018-2025 |
+| **Campaign / Vulnerability Name** | ShadyPanda (DarkSpectre Pillar 1) |
+| **Victims / Targets** | Approximately 5.6 million users of Chrome, Edge, and Firefox extensions globally |
+| **Description** | DarkSpectre published legitimate-appearing browser extensions (new tab pages, productivity tools) using real domains (infinitynewtab[.]com, infinitytab[.]com). After accumulating millions of users and building trust, the group pushed malicious updates with 72-hour delayed activation affecting only ~10% of page loads to evade detection. Extensions performed comprehensive spyware functions including search hijacking, behavioral profiling, and affiliate fraud. |
+| **Source / Link** | Koi Security — https://www.koi.ai/blog/darkspectre-unmasking-the-threat-actor-behind-7-8-million-infected-browsers |
+
+**2.2 GhostPoster Campaign (2022–2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2022-2025 |
+| **Campaign / Vulnerability Name** | GhostPoster (DarkSpectre Pillar 2) |
+| **Victims / Targets** | Approximately 1.05 million users |
+| **Description** | A second malicious extension cluster under the DarkSpectre umbrella, GhostPoster focused on credential harvesting and persistent device fingerprinting. Shared C2 infrastructure with ShadyPanda confirmed unified actor attribution. |
+| **Source / Link** | Koi Security / The Hacker News — https://thehackernews.com/2025/12/darkspectre-browser-extension-campaigns.html |
+
+**2.3 Zoom Stealer / Corporate Intelligence Campaign (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025 |
+| **Campaign / Vulnerability Name** | Zoom Stealer (DarkSpectre Pillar 3) |
+| **Victims / Targets** | 2.2 million users; corporate participants in Google Meet, Zoom, and GoTo Webinar sessions |
+| **Description** | DarkSpectre deployed 18 malicious browser extensions mimicking enterprise videoconferencing tools. These established persistent WebSocket connections to stream meeting data in real time: meeting URLs with embedded passwords, meeting IDs, topics, participant lists, webinar speaker profiles, company affiliations, and logos. ExtraHop assessed this phase represents a shift toward semiconductor and aerospace sector targeting via supply chain interdiction in software development environments. |
+| **Source / Link** | Koi Security / The Hacker News — https://thehackernews.com/2025/12/darkspectre-browser-extension-campaigns.html |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Corporate organizations broadly (via mass extension distribution)
+- Semiconductor and aerospace (assessed emerging focus)
+- Any enterprise using videoconferencing tools
+
+### Notable Victim Organizations
+- 8.8 million users total across three campaigns (unnamed organizations)
+- Targets identified via corporate meeting infiltration capabilities
+
+### Technologies & CVEs Exploited
+- No CVEs — browser extension marketplace abuse (Chrome, Edge, Firefox, Opera)
+- WebSocket connections for real-time data streaming
+- Time-delayed payload activation (3-day delay post-approval)
+- Alibaba Cloud infrastructure for C2
+- VMProtect obfuscation
+- Legitimate driver exploitation (TrueSight2) for AV evasion (related campaigns)
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Drive-by Compromise [T1189] |
+| Execution | Browser Extensions [T1176] |
+| Persistence | Browser Extensions [T1176] |
+| Defense Evasion | Obfuscated Files or Information [T1027] |
+| Defense Evasion | Time Based Evasion [T1497.003] |
+| Defense Evasion | Masquerading [T1036] |
+| Collection | Browser Session Hijacking [T1185] |
+| Collection | Data from Information Repositories [T1213] |
+| Collection | Screen Capture [T1113] |
+| Command and Control | Application Layer Protocol: Web Protocols [T1071.001] |
+| Exfiltration | Exfiltration Over Web Service [T1567] |
+>[Source: Koi Security Research](https://www.koi.ai/blog/darkspectre-unmasking-the-threat-actor-behind-7-8-million-infected-browsers)
+
+---

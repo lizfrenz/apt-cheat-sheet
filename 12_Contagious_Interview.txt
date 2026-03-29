@@ -1,0 +1,109 @@
+# Threat Actor Profile: Contagious Interview
+>😷"Contagious" (The Infection), the campaign is designed to infect software developers and "Interview" is the Lure.  The name is coined by researches from Palo Alto Unit 42.
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | Contagious Interview |
+| **Aliases** | CL-STA-0240, PurpleBravo, DeceptiveDevelopment, DEV#POPPER, Famous Chollima, UNC5342, Void Dokkaebi, Tenacious Pungsan, WaterPlum, Gwisin Gang |
+| **Actor Type** | APT |
+| **Suspected Origin** | North Korea — Lazarus Group nexus; RGB-affiliated |
+| **Active Since** | 2023 (first publicly documented); operational pattern consistent with DPRK activity since 2017 |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 Initial BeaverTail/InvisibleFerret Campaign (2023)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2023-11 |
+| **Campaign / Vulnerability Name** | Contagious Interview — BeaverTail Campaign |
+| **Victims / Targets** | Software developers (primarily US tech industry); cryptocurrency wallet holders |
+| **Description** | Unit 42 first documented Contagious Interview: North Korean threat actors posing as anonymous recruiters lured software developers into fake technical interviews. Victims were asked to run code that deployed BeaverTail (a JavaScript infostealer/downloader) and InvisibleFerret (a Python backdoor). BeaverTail can steal credentials from 13 different cryptocurrency wallets. |
+| **Source / Link** | Palo Alto Unit 42 — https://unit42.paloaltonetworks.com/two-campaigns-by-north-korea-bad-actors-target-job-hunters/ |
+
+**2.2 Expanded Targeting with Front Companies (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-04 |
+| **Campaign / Vulnerability Name** | BlockNovas / SoftGlide / Angeloper Campaign |
+| **Victims / Targets** | Cryptocurrency and blockchain developers globally; supply chain risk to their employer organizations |
+| **Description** | Contagious Interview established three fraudulent front companies in the crypto consulting sector (BlockNovas LLC, SoftGlide LLC, Angeloper Agency) with AI-generated employee personas on LinkedIn and social media. ClickFix lures were embedded in video interview platforms. The FBI seized the BlockNovas domain on April 23, 2025. New malware variant OtterCookie was introduced alongside BeaverTail and InvisibleFerret. |
+| **Source / Link** | Silent Push / The Hacker News — https://thehackernews.com/2025/04/north-korean-hackers-spread-malware-via.html |
+
+**2.3 EtherHiding Blockchain C2 (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-02 |
+| **Campaign / Vulnerability Name** | JADESNOW / EtherHiding Campaign |
+| **Victims / Targets** | Web3/DeFi developers; cryptocurrency platforms |
+| **Description** | Google GTIG documented Contagious Interview (UNC5342) adopting EtherHiding — storing and retrieving malicious payloads via Ethereum smart contracts. The technique makes C2 infrastructure highly resistant to takedown. JADESNOW malware was used to deploy a JavaScript variant of InvisibleFerret, enabling cryptocurrency theft. |
+| **Source / Link** | Google GTIG — https://cloud.google.com/blog/topics/threat-intelligence/dprk-adopts-etherhiding |
+
+**2.4 AI Developer Targeting (2025–2026)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-2026 |
+| **Campaign / Vulnerability Name** | PurpleBravo — AI/Blockchain Sector Campaign |
+| **Victims / Targets** | 3,136 identified IP addresses; AI, crypto, financial services, and software development organizations in Europe, South Asia, Middle East, Central America |
+| **Description** | Recorded Future's Insikt Group documented PurpleBravo targeting 20+ organizations, with the group expanding into AI sector targeting. Actors monitored cybersecurity threat intelligence platforms (Validin, VirusTotal) to detect infrastructure exposure and rapidly deployed replacement infrastructure, suggesting real-time operational monitoring. |
+| **Source / Link** | The Hacker News / SentinelOne — https://thehackernews.com/2026/01/north-korean-purplebravo-campaign.html |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Cryptocurrency and blockchain development
+- Decentralized finance (DeFi)
+- AI and Web3 technology
+- Financial services
+- IT services and software development
+- Marketing agencies
+
+### Notable Victim Organizations
+- Bybit (cryptocurrency exchange — linked to Trevor Greer persona)
+- Multiple unnamed crypto firms globally
+
+### Technologies & CVEs Exploited
+- npm malicious packages (supply chain)
+- ClickFix social engineering
+- Ethereum smart contracts (EtherHiding C2)
+- Video conferencing platform impersonation (MiroTalk, FreeConference.com clones)
+- BeaverTail malware (JavaScript/Qt infostealer)
+- InvisibleFerret backdoor (Python)
+- OtterCookie malware
+- JADESNOW downloader
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Phishing: Spearphishing via Service [T1566.003] |
+| Initial Access | Supply Chain Compromise: Compromise Software Dependencies [T1195.001] |
+| Execution | Command and Scripting Interpreter: Python [T1059.006] |
+| Execution | Command and Scripting Interpreter: JavaScript [T1059.007] |
+| Execution | User Execution: Malicious File [T1204.002] |
+| Persistence | Scheduled Task/Job [T1053] |
+| Defense Evasion | Obfuscated Files or Information [T1027] |
+| Defense Evasion | Masquerading [T1036] |
+| Credential Access | Credentials from Web Browsers [T1555.003] |
+| Credential Access | Steal Web Session Cookie [T1539] |
+| Collection | Data from Local System [T1005] |
+| Collection | Clipboard Data [T1115] |
+| Command and Control | Web Service [T1102] |
+| Exfiltration | Exfiltration Over C2 Channel [T1041] |
+| Impact | Financial Theft [T1657] |
+>[Source: Palo Alto Unit 42](https://unit42.paloaltonetworks.com/north-korean-threat-actors-lure-tech-job-seekers-as-fake-recruiters/#:~:text=Executive%20Summary,downloader%20and%20the%20InvisibleFerret%20backdoor.)
+---

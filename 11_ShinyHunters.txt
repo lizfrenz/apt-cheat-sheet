@@ -1,0 +1,106 @@
+# Threat Actor Profile: ShinyHunters
+>✨ Refers to the Pokémon franchise, where "shiny" creatures are rare, and "hunters" seek them out.
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | ShinyHunters |
+| **Aliases** | UNC6040, UNC6240, UNC6661, ShinyCorp, Sp1d3rHunters (collaborative persona with Scattered Spider) |
+| **Actor Type** | eCrime |
+| **Suspected Origin** | Multi-national (Western; French national Sebastien Raoult sentenced in US 2024; leadership appears to operate internationally) |
+| **Active Since** | 2020 |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 Mass Database Theft Campaign (2020–2021)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2020-2021 |
+| **Campaign / Vulnerability Name** | Mass Data Breach Campaign |
+| **Victims / Targets** | Tokopedia (91M accounts), Mathway (25M), Wattpad, Microsoft GitHub private repos, AT&T (disputed at the time) |
+| **Description** | ShinyHunters emerged as a prolific data theft collective, systematically breaching databases via credential stuffing and API exploitation. Stolen data was sold or leaked on hacking forums. The group built a reputation through self-promotion and direct engagement with the cybersecurity press. |
+| **Source / Link** | Vali Cyber ShinyHunters Profile — https://valicyber.com/resources/shinyhunters/ |
+
+**2.2 Snowflake Customer Campaign (2024)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024 |
+| **Campaign / Vulnerability Name** | Snowflake / Ticketmaster / Santander Campaign |
+| **Victims / Targets** | Ticketmaster (560M users), Santander Bank, Neiman Marcus, AT&T, Truist Bank; approximately 165 organizations via Snowflake |
+| **Description** | ShinyHunters used old, valid credentials captured by infostealers (in combination with missing MFA) to breach Snowflake cloud storage accounts. AT&T paid approximately $370,000 to have stolen data deleted. The campaign represented a pivot from direct database hacking to cloud storage exploitation. |
+| **Source / Link** | ReliaQuest — https://reliaquest.com/blog/threat-spotlight-shinyhunters-data-breach-targets-salesforce-amid-scattered-spider-collaboration/ |
+
+**2.3 Salesforce Vishing Campaign (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-06 |
+| **Campaign / Vulnerability Name** | Salesforce Extortion Campaign (UNC6040/UNC6240/UNC6661) |
+| **Victims / Targets** | Google, Cisco, Adidas, Louis Vuitton, Pandora, Allianz, Tiffany & Co., Dior, Qantas; 80+ nations |
+| **Description** | ShinyHunters (tracked as UNC6040 by Google GTIG) pivoted to voice phishing (vishing) attacks targeting Salesforce environments. Attackers impersonated IT support, calling employees to convince them to install a trojanized "Salesforce Data Loader" app, granting OAuth access to organizational data. DDoS attacks and harassment of victim staff were used as additional extortion pressure. |
+| **Source / Link** | Google GTIG / Mandiant — https://cloud.google.com/blog/topics/threat-intelligence/expansion-shinyhunters-saas-data-theft |
+
+**2.4 Alliance with Scattered Spider / LAPSUS$ (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-08 |
+| **Campaign / Vulnerability Name** | Scattered LAPSUS$ Hunters Supergroup |
+| **Victims / Targets** | Qantas (5.7M customers), Jaguar Land Rover, Kering (Gucci/Balenciaga) |
+| **Description** | ShinyHunters launched a Telegram channel combining operations with Scattered Spider and LAPSUS$, advertising a forthcoming RaaS platform ("shinysp1d3r"). The collaborative supergroup combined ShinyHunters' data exfiltration expertise with Scattered Spider's social engineering and LAPSUS$'s insider recruitment. French law enforcement arrested four suspected members. |
+| **Source / Link** | The Hacker News / Resecurity — https://thehackernews.com/2025/08/cybercrime-groups-shinyhunters.html |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Technology and SaaS platforms
+- Financial services and banking
+- Retail and e-commerce
+- Aviation and travel
+- Luxury goods
+- Automotive
+
+### Notable Victim Organizations
+- Google, Cisco, Adidas, Louis Vuitton, Pandora, Dior, Tiffany & Co., Allianz
+- Qantas, Jaguar Land Rover, Kering
+- Ticketmaster, AT&T, Santander Bank
+
+### Technologies & CVEs Exploited
+- Credential stuffing with infostealer-harvested credentials
+- Missing or SMS-based MFA bypass
+- Salesforce OAuth device code flow abuse
+- BrowserStack API key theft
+- Social engineering / vishing (IT impersonation)
+- No CVEs required in recent campaigns — pure social engineering
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Valid Accounts [T1078] |
+| Initial Access | Phishing: Spearphishing via Service [T1566.003] |
+| Initial Access | Phishing for Information [T1598] |
+| Credential Access | Steal Application Access Token [T1528] |
+| Credential Access | Credentials from Password Stores [T1555] |
+| Credential Access | Multi-Factor Authentication Interception [T1111] |
+| Discovery | Cloud Service Discovery [T1526] |
+| Discovery | Cloud Storage Object Discovery [T1619] |
+| Collection | Data from Cloud Storage [T1530] |
+| Collection | Data from Information Repositories [T1213] |
+| Exfiltration | Exfiltration Over Web Service [T1567] |
+| Impact | Financial Theft [T1657] |
+| Impact | Network Denial of Service [T1498] |
+>[Source: Google GTIG / Mandiant](https://cloud.google.com/blog/topics/threat-intelligence/expansion-shinyhunters-saas-data-theft)
+
+---
