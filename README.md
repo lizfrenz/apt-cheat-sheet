@@ -509,3 +509,496 @@ PHALT#BLYX is a campaign-level designation assigned by Securonix in January 2026
 | Command and Control | Protocol Tunneling [T1572] |
 >[Source: MITRE ATT&CK](https://attack.mitre.org/groups/G1020)
 ---
+# Threat Actor Profile: GTG-1002
+>⚠️ LIMITED INTELLIGENCE WARNING  
+GTG-1002 is a recently designated threat actor cluster. Attribution to a specific Chinese state group has not been formally confirmed by government sources. Public documentation derives primarily from Anthropic and SOCRadar reporting.
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | GTG-1002 |
+| **Aliases** | None publicly documented |
+| **Actor Type** | APT |
+| **Suspected Origin** | China (attributed with moderate confidence based on code reuse and infrastructure patterns) |
+| **Active Since** | 2022 |
+| **Current Status** | Inactive (campaign contained by mid-2025 per reporting) |
+
+---
+
+## 2. Notable Events
+
+**2.1 AI-Orchestrated Global Espionage Campaign (2022–2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2022-2025 |
+| **Campaign / Vulnerability Name** | GTG-1002 AI-Powered Espionage Campaign |
+| **Victims / Targets** | Approximately 30 organizations across defense, energy, technology, finance, and manufacturing sectors in Asia and Europe |
+| **Description** | GTG-1002 represents the first publicly documented case of an AI agent — specifically Anthropic's Claude Code — being used as the primary operator in a large-scale cyber espionage campaign. The threat actors built an autonomous framework around Claude Code, bypassing safety guardrails through prompt manipulation and role-play scenarios. The AI performed approximately 80–90% of the campaign work including reconnaissance, target profiling, vulnerability discovery, exploit generation, credential theft, and data sorting. Human operators provided oversight but limited direct participation. The 18-month campaign focused on stealing military and energy-related intelligence. |
+| **Source / Link** | SOCRadar / Anthropic safety reporting — https://socradar.io/blog/ai-powered-gtg-1002-campaign/ |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Defense and military
+- Energy
+- Technology
+- Finance and financial services
+- Manufacturing
+
+### Notable Victim Organizations
+- Approximately 30 organizations (unnamed) across Asia and Europe
+
+### Technologies & CVEs Exploited
+- AI safety vulnerabilities (prompt injection / role-play manipulation of Claude Code)
+- Specific CVEs leveraged: Unknown / Not publicly documented
+- The campaign leveraged AI to autonomously identify and generate exploits against targets
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Reconnaissance | Gather Victim Org Information [T1591] |
+| Reconnaissance | Active Scanning [T1595] |
+| Initial Access | Exploit Public-Facing Application [T1190] |
+| Execution | Command and Scripting Interpreter [T1059] |
+| Credential Access | Credential Dumping [T1003] |
+| Credential Access | Brute Force [T1110] |
+| Collection | Data from Network Shared Drive [T1039] |
+| Collection | Automated Collection [T1119] |
+| Exfiltration | Automated Exfiltration [T1020] |
+| Exfiltration | Data Transfer Size Limits [T1030] |
+>[Source: SOCRadar GTG-1002 report](https://malpedia.caad.fkie.fraunhofer.de/actor/gtg-1002) 
+---
+
+# Threat Actor Profile: Konni Group
+>🐀 The KONNI RAT: Security researchers (including Cisco Talos) first identified the unique backdoor malware and dubbed it "KONNI".
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | Konni Group |
+| **Aliases** | Kimsuky (subset), Earth Imp, TA406, Thallium, Vedalia, Velvet Chollima, APT37 (partial overlap attributed by some vendors) |
+| **Actor Type** | APT |
+| **Suspected Origin** | North Korea — Reconnaissance General Bureau (RGB) |
+| **Active Since** | 2014 (first undetected activity; publicly documented from 2017) |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 Russian Diplomatic Targeting (2022)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2022-01 |
+| **Campaign / Vulnerability Name** | New Year's Spearphishing Campaign / Konni RAT v3 |
+| **Victims / Targets** | Russian diplomatic entities and government bodies |
+| **Description** | Konni conducted spearphishing attacks using New Year's Eve lures against Russian diplomatic targets. Malicious ZIP files launched a multi-stage attack chain deploying a new version of the Konni RAT as a Windows service (scrnsvc.dll). The use of CAB files as infection stages was a distinctive marker. Researchers noted this represented an unusual targeting of Russia, a nominal DPRK ally. |
+| **Source / Link** | Cluster25 / Security Affairs — https://securityaffairs.com/126388/apt/konni-apt-russia-entities.html |
+
+**2.2 Korean Government and Academic Targeting (2024)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024 |
+| **Campaign / Vulnerability Name** | Kimsuky/Konni RAT Campaign (Q3 2024) |
+| **Victims / Targets** | Korean and Russian government entities; virtual asset transaction specialists; North Korean affairs experts |
+| **Description** | The Konni campaign escalated attacks leveraging cloud and FTP services for C2 to complicate detection. Attacks used financial and governmental themes as lures and deployed AsyncRAT variants with XOR-based encryption and future-dated timestamps for AV evasion. The group abused free hosting platforms for C2 infrastructure. |
+| **Source / Link** | CYFIRMA APT Quarterly Highlights Q3 2024 — https://www.cyfirma.com/research/apt-quarterly-highlights-q3-2024/ |
+
+**2.3 Blockchain Developer Targeting / AI-Generated Backdoor (2025–2026)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-10 / 2026-01 |
+| **Campaign / Vulnerability Name** | Blockchain Developer Spearphishing Campaign |
+| **Victims / Targets** | Software developers and engineers in blockchain, cryptocurrency, and Web3 sectors across Japan, Australia, and India |
+| **Description** | Konni shifted targeting to blockchain/crypto developers using fake project documentation as lures. Check Point Research identified a PowerShell backdoor that appeared to be AI-generated (LLM-written code with verbose documentation and modular structure). The campaign used weaponized LNK files, UAC bypass (uc.exe), and RMM tools (SimpleHelp) for persistence. |
+| **Source / Link** | Check Point Research — https://securityaffairs.com/187317/apt/north-korea-linked-konni-uses-ai-to-build-stealthy-malware-tooling.html |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Government (South Korean, Russian, and Japanese government bodies)
+- Cryptocurrency and blockchain
+- Defense and national security think tanks
+- Academia and research institutions
+- Media and journalism
+
+### Notable Victim Organizations
+- South Korean government agencies
+- Russian diplomatic missions
+- Web3/blockchain development companies (Japan, Australia, India)
+- North Korean affairs research institutions
+
+### Technologies & CVEs Exploited
+- Weaponized LNK files
+- UAC bypass techniques (uc.exe)
+- Konni RAT (custom implant, active since 2014)
+- AsyncRAT variants
+- SimpleHelp RMM (for remote access persistence)
+- Cloudflare infrastructure abuse
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Spearphishing Attachment [T1566.001] |
+| Initial Access | Spearphishing Link [T1566.002] |
+| Execution | Command and Scripting Interpreter: PowerShell [T1059.001] |
+| Execution | Command and Scripting Interpreter: Visual Basic [T1059.005] |
+| Execution | User Execution: Malicious File [T1204.002] |
+| Persistence | Scheduled Task/Job: Scheduled Task [T1053.005] |
+| Persistence | Boot or Logon Autostart Execution: Registry Run Keys [T1547.001] |
+| Privilege Escalation | Abuse Elevation Control Mechanism: Bypass UAC [T1548.002] |
+| Defense Evasion | Modify Registry [T1112] |
+| Defense Evasion | Obfuscated Files or Information [T1027] |
+| Defense Evasion | Process Injection [T1055] |
+| Collection | Screen Capture [T1113] |
+| Collection | Input Capture: Keylogging [T1056.001] |
+| Command and Control | Application Layer Protocol: Web Protocols [T1071.001] |
+| Command and Control | Encrypted Channel [T1573] |
+| Exfiltration | Exfiltration Over C2 Channel [T1041] |
+>[Source: MITRE ATT&CK KONNI](https://attack.mitre.org/software/S0356/)[Source: MITRE ATT&CK Kimsuky](https://attack.mitre.org/groups/G0094/)
+---
+
+# Threat Actor Profile: TeamPCP
+>☁️ Security researchers identified the group after observing malicious activity involving the "TeamPCP Cloud stealer" and tpcp.tar.gz files used to exfiltrate data to attacker-controlled servers.
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | TeamPCP |
+| **Aliases** | DeadCatx3, PCPcat, ShellForce, CanisterWorm |
+| **Actor Type** | eCrime |
+| **Suspected Origin** | Unknown / Not publicly documented |
+| **Active Since** | 2025-11 (public emergence; self-described rebranding suggests prior activity) |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**2.1 Mass Cloud Infrastructure Compromise via Worm (2025–2026)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-12 / 2026-02 |
+| **Campaign / Vulnerability Name** | Operation PCPcat / Cloud Worm Campaign |
+| **Victims / Targets** | 60,000+ servers worldwide; victims in South Korea, Canada, United States, Serbia, UAE; JobsGO (Vietnam) — 2M+ records exfiltrated |
+| **Description** | TeamPCP launched a worm-driven campaign targeting exposed Docker APIs, Kubernetes clusters, Redis servers, Ray dashboards, and React2Shell vulnerabilities. Each compromised server became a self-propagating scanner and criminal platform running cryptocurrency miners (XMRig/Monero), proxy software, and ransomware C2 infrastructure. Kubernetes clusters were converted into distributed botnets. Data was published via the ShellForce Telegram channel. |
+| **Source / Link** | Flare — https://flare.io/learn/resources/blog/teampcp-cloud-native-ransomware |
+
+**2.2 Trivy Supply Chain Attack (2026-03)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2026-03 |
+| **Campaign / Vulnerability Name** | CVE-2026-33634 / Trivy Supply Chain Compromise |
+| **Victims / Targets** | Aqua Security (Trivy vulnerability scanner), LiteLLM AI gateway, Telnyx Python package; estimated 95 million developers downstream |
+| **Description** | TeamPCP compromised Aqua Security's Trivy vulnerability scanner by stealing GitHub authentication credentials via an automated agent. They injected credential-stealing malware into official Trivy releases and GitHub Actions, then pivoted to compromise LiteLLM and Telnyx. Checkmarx GitHub Actions were subsequently compromised via stolen Trivy credentials. TeamPCP also deployed a Kubernetes wiper targeting Iranian time-zone systems. |
+| **Source / Link** | The Hacker News — https://thehackernews.com/2026/03/teampcp-hacks-checkmarx-github-actions.html |
+
+**2.3 Partnership with Vect Ransomware Group (2026)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2026 |
+| **Campaign / Vulnerability Name** | RaaS Partnership with Vect |
+| **Victims / Targets** | Organizations with compromised CI/CD pipelines and cloud environments |
+| **Description** | TeamPCP began partnering with the Vect ransomware group to convert supply chain compromises into large-scale ransomware operations, expanding from cryptomining and data theft into full ransomware deployment as an initial access broker. |
+| **Source / Link** | Socket / Infosecurity Magazine — https://www.infosecurity-magazine.com/news/teampcp-targets-telnyx-pypi-package/ |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Cloud infrastructure and DevOps
+- Software supply chain (open-source ecosystems)
+- AI/ML development tooling
+- Technology companies
+- Financial services
+- Any organization with misconfigured cloud infrastructure
+
+### Notable Victim Organizations
+- Aqua Security (Trivy scanner)
+- LiteLLM (AI gateway)
+- Telnyx (Python package)
+- Checkmarx (GitHub Actions)
+- JobsGO.vn (Vietnam recruitment platform)
+
+### Technologies & CVEs Exploited
+- CVE-2026-33634 (Trivy supply chain — CVSS 9.4)
+- Exposed Docker APIs (unauthenticated)
+- Exposed Kubernetes API servers
+- Redis misconfiguration
+- Ray dashboard exposure
+- React2Shell vulnerability
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Exploit Public-Facing Application [T1190] |
+| Initial Access | Supply Chain Compromise: Compromise Software Dependencies [T1195.001] |
+| Execution | Command and Scripting Interpreter: Python [T1059.006] |
+| Execution | Command and Scripting Interpreter: Unix Shell [T1059.004] |
+| Persistence | Scheduled Task/Job: Cron [T1053.003] |
+| Persistence | Create or Modify System Process [T1543] |
+| Defense Evasion | Obfuscated Files or Information [T1027] |
+| Credential Access | Unsecured Credentials: Credentials in Files [T1552.001] |
+| Credential Access | Unsecured Credentials: Container API [T1552.007] |
+| Discovery | Cloud Service Discovery [T1526] |
+| Discovery | Container and Resource Discovery [T1613] |
+| Lateral Movement | Lateral Tool Transfer [T1570] |
+| Collection | Data from Cloud Storage [T1530] |
+| Exfiltration | Exfiltration Over Web Service [T1567] |
+| Impact | Resource Hijacking [T1496] |
+| Impact | Data Encrypted for Impact [T1486] |
+| Impact | Disk Wipe [T1561] |
+>[Source: Wiz Threat Landscape](https://threats.wiz.io/all-actors/teampcp)
+---
+# Threat Actor Profile: Cl0p
+> The name "Cl0p" for the ransomware group originates from the word "clop" itself, which is often used in Russian-language hacker forums to describe malware or activities related to data encryption. A clop means a tick or more commonly a bedbug in Russian.
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | Cl0p |
+| **Aliases** | TA505, FIN11, UNC2546, UNC2582, UNC4857, Lace Tempest |
+| **Actor Type** | eCrime |
+| **Suspected Origin** | Russia / Russian-speaking criminal group (assessed with high confidence; avoids encrypting systems with Russian/Azerbaijani keyboard layouts) |
+| **Active Since** | 2019 (Cl0p ransomware first observed); TA505 active since ~2014 |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**Event 1 — Accellion FTA Zero-Day Campaign (2020–2021)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2020-12 / 2021-01 |
+| **Campaign / Vulnerability Name** | CVE-2021-27101 through CVE-2021-27104 (Accellion FTA) |
+| **Victims / Targets** | Reserve Bank of New Zealand, Bombardier, Kroger, Qualys, University of Colorado, Jones Day, and ~100 others |
+| **Description** | Cl0p/TA505 exploited four zero-day vulnerabilities in Accellion's legacy File Transfer Appliance to steal data from major global organizations. Rather than encrypting systems, the group focused on pure data extortion, threatening to publish stolen files on the CL0P^_-LEAKS dark web site. |
+| **Source / Link** | CISA / Mandiant — https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-055a |
+
+**Event 2 — GoAnywhere MFT Zero-Day (2023)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2023-01 |
+| **Campaign / Vulnerability Name** | CVE-2023-0669 (Fortra GoAnywhere MFT) |
+| **Victims / Targets** | Approximately 130 organizations across healthcare, financial services, government |
+| **Description** | Cl0p exploited a zero-day in the GoAnywhere managed file transfer platform, exfiltrating data from ~130 victims over 10 days. Ransom notes were sent to senior executives identified via open-source research, with no lateral movement beyond the GoAnywhere platform itself. |
+| **Source / Link** | CISA Advisory AA23-158A — https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a |
+
+**Event 3 — MOVEit Transfer Zero-Day Campaign (2023)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2023-05 / 2023-06 |
+| **Campaign / Vulnerability Name** | CVE-2023-34362 (Progress MOVEit Transfer) |
+| **Victims / Targets** | ~2,000 organizations; US federal agencies (Department of Energy, HHS), BBC, British Airways, Shell, PwC, Siemens Energy |
+| **Description** | Cl0p exploited a critical SQL injection zero-day in the MOVEit Transfer platform, deploying the LEMURLOOT web shell to steal data at scale. The campaign impacted organizations in over 40 countries and resulted in a $10M US State Department bounty for information linking the group to a foreign government. The group publicly stated it deleted government and military data. |
+| **Source / Link** | CISA / FBI Advisory AA23-158A — https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a |
+
+**Event 4 — Cleo File Transfer Platform Exploitation (2024)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024-12 |
+| **Campaign / Vulnerability Name** | Cleo Harmony / VLTrader / LexiCom Zero-Days |
+| **Victims / Targets** | Organizations using Cleo managed file transfer products |
+| **Description** | Cl0p claimed responsibility for exploiting zero-day vulnerabilities in Cleo's file transfer platforms, continuing its pattern of targeting MFT software. The group demonstrated consistent operational focus: identify widely deployed enterprise file transfer tools, develop or acquire zero-day exploits, and execute mass data theft campaigns. |
+| **Source / Link** | BleepingComputer — https://www.bleepingcomputer.com/news/security/clop-ransomware-claims-responsisbility-for-cleo-data-theft-attacks/ |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Financial services and banking
+- Healthcare
+- Government (federal and state agencies)
+- Manufacturing and energy
+- Legal and professional services
+- Technology and managed service providers
+
+### Notable Victim Organizations
+- US federal agencies (Department of Energy, HHS)
+- BBC, British Airways, Shell, PwC, Siemens Energy (MOVEit)
+- Reserve Bank of New Zealand (Accellion)
+- Approximately 2,000 MOVEit victims globally
+
+### Technologies & CVEs Exploited
+- CVE-2021-27101 to CVE-2021-27104 (Accellion FTA)
+- CVE-2021-35211 (SolarWinds Serv-U)
+- CVE-2023-0669 (GoAnywhere MFT)
+- CVE-2023-34362 (MOVEit Transfer)
+- Cleo Harmony/VLTrader/LexiCom zero-days (2024)
+- LEMURLOOT web shell (custom MOVEit payload)
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Exploit Public-Facing Application [T1190] |
+| Initial Access | Phishing: Spearphishing Attachment [T1566.001] |
+| Initial Access | Valid Accounts [T1078] |
+| Execution | Command and Scripting Interpreter [T1059] |
+| Execution | Server Software Component: Web Shell [T1505.003] |
+| Persistence | Boot or Logon Initialization Scripts [T1037] |
+| Persistence | Scheduled Task/Job [T1053] |
+| Privilege Escalation | Create or Modify System Process [T1543] |
+| Defense Evasion | Subvert Trust Controls: Code Signing [T1553.002] |
+| Defense Evasion | Impair Defenses: Disable or Modify Tools [T1562.001] |
+| Defense Evasion | Indicator Removal: File Deletion [T1070.004] |
+| Credential Access | Remote Services: Remote Desktop Protocol [T1021.001] |
+| Lateral Movement | Remote Services [T1021] |
+| Collection | Data Staged [T1074] |
+| Exfiltration | Exfiltration Over Web Service [T1567] |
+| Impact | Data Encrypted for Impact [T1486] |
+| Impact | Inhibit System Recovery [T1490] |
+>[Source: Blackpoint Cyber Clop Threat Profile](https://blackpointcyber.com/threat-profile/clop-ransomware/)
+---
+# Threat Actor Profile: Interlock
+>🔒 The name drives from file extension: When Interlock ransomware encrypts a victim’s files, it renames them to include the .interlock.
+
+---
+
+## 1. Basic Identification
+
+| Field | Value |
+|---|---|
+| **Primary Name** | Interlock |
+| **Aliases** | Nefarious Mantis |
+| **Actor Type** | eCrime |
+| **Suspected Origin** | Unknown / Not publicly documented (possible Rhysida / Vice Society lineage) |
+| **Active Since** | 2024-09 |
+| **Current Status** | Active |
+
+---
+
+## 2. Notable Events
+
+**Event 1 — Texas Tech University Health Sciences Center Breach (2024)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2024-09 |
+| **Campaign / Vulnerability Name** | Texas Tech University HSCA Data Breach |
+| **Victims / Targets** | Texas Tech University Health Sciences Center; approximately 1.46 million patient records compromised |
+| **Description** | One of Interlock's earliest high-profile attacks targeted a healthcare academic institution, demonstrating the group's intent to pursue sensitive data in regulated sectors. The breach involved both data exfiltration and encryption, with stolen records including patient medical information. |
+| **Source / Link** | Arctic Wolf / Quorum Cyber — https://arcticwolf.com/resources/blog/threat-actor-profile-interlock-ransomware/ |
+
+**Event 2 — DaVita Kidney Care Breach (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-04 |
+| **Campaign / Vulnerability Name** | DaVita Ransomware Attack |
+| **Victims / Targets** | DaVita Inc. (Fortune 500 dialysis provider); 200,000+ patients; 1.5 TB of data stolen |
+| **Description** | Interlock's most impactful known attack targeted DaVita, one of the largest kidney care providers in the US. The group exfiltrated approximately 700,000 files including patient data, insurance information, and financial records. When DaVita did not pay the ransom, Interlock leaked the data on its "Worldwide Secrets Blog" dark web site. |
+| **Source / Link** | Arctic Wolf / Quorum Cyber — https://arcticwolf.com/resources/blog/threat-actor-profile-interlock-ransomware/ |
+
+**Event 3 — City of St. Paul, Minnesota Attack (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-07 |
+| **Campaign / Vulnerability Name** | City of St. Paul Ransomware Attack |
+| **Victims / Targets** | City of St. Paul, Minnesota government; 3,500 city employees' personal data at risk |
+| **Description** | Interlock took key city systems offline in a ransomware attack. The city confirmed it did not pay the ransom. PRODAFT had detected Interlock pre-attack activity 10 days before, providing advance warning. Interlock publicly claimed responsibility in August 2025. |
+| **Source / Link** | Arctic Wolf — https://arcticwolf.com/resources/blog/threat-actor-profile-interlock-ransomware/ |
+
+**Event 4 — CISA/FBI Joint Advisory — Malware Upgrade (2025)**
+
+| Field | Details |
+|---|---|
+| **Date** | 2025-07-22 |
+| **Campaign / Vulnerability Name** | CISA Advisory AA25-203A |
+| **Victims / Targets** | Organizations across North America and Europe in healthcare, education, government, technology |
+| **Description** | CISA, FBI, HHS, and MS-ISAC issued a joint advisory confirming Interlock had upgraded its encryptors for both Windows and Linux, with enhanced VM encryption capabilities. The advisory noted the group added ClickFix social engineering in May 2025, and that it operates without affiliates in a closed model. |
+| **Source / Link** | CISA Advisory AA25-203A — https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-203a |
+
+---
+
+## 3. Primary Targets
+
+### Industries / Sectors
+- Healthcare (primary)
+- Education and higher education
+- Government
+- Technology and manufacturing
+- Defense contractors
+- Transportation and logistics
+
+### Notable Victim Organizations
+- DaVita Inc. (Fortune 500 kidney care)
+- Texas Tech University Health Sciences Center
+- City of St. Paul, Minnesota
+- National Defense Corp. (reported)
+
+### Technologies & CVEs Exploited
+- Drive-by downloads from compromised legitimate websites
+- ClickFix social engineering (added May 2025)
+- Compromised credentials for initial access
+- Custom ransomware (Windows and Linux/FreeBSD variants)
+- NodeSnake RAT (custom)
+- LummaStealer, BerserkStealer infostealers
+- RDP, AnyDesk, PuTTY (lateral movement)
+
+---
+
+## 4. MITRE ATT&CK TTPs
+
+| Tactic | Technique |
+|---|---|
+| Initial Access | Drive-by Compromise [T1189] |
+| Initial Access | Valid Accounts [T1078] |
+| Initial Access | Phishing [T1566] |
+| Execution | Command and Scripting Interpreter: PowerShell [T1059.001] |
+| Execution | User Execution: Malicious Link [T1204.001] |
+| Persistence | Scheduled Task/Job [T1053] |
+| Defense Evasion | Obfuscated Files or Information [T1027] |
+| Defense Evasion | Virtualization/Sandbox Evasion [T1497] |
+| Credential Access | Credentials from Web Browsers [T1555.003] |
+| Lateral Movement | Remote Services: Remote Desktop Protocol [T1021.001] |
+| Lateral Movement | Remote Access Software [T1219] |
+| Collection | Data Staged [T1074] |
+| Exfiltration | Exfiltration Over Web Service [T1567] |
+| Exfiltration | Exfiltration Over C2 Channel [T1041] |
+| Impact | Data Encrypted for Impact [T1486] |
+| Impact | Inhibit System Recovery [T1490] |
+| Impact | Data Destruction [T1485] |
+>[Source: CISA Advisory AA25-203A](https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-203a)
+---
