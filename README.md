@@ -13,7 +13,7 @@ Tracking modern cyber threat actors for fun, work, and study.
 | 5 | [Salt Typhoon](05_Salt_Typhoon.txt) | APT | China — MSS |
 | 6 | [GTG-1002](06_GTG-1002.txt) | APT | China nexus |
 | 7 | [Konni Group](07_Konni_Group.txt) | APT | North Korea — RGB |
-| 8 | [TeamPCP](08_TeamPCP.txt) | eCrime | Unknown |
+| 8 | [TeamPCP](08_TeamPCP.md) | eCrime | Unknown |
 | 9 | [Cl0p](09_Cl0p.txt) | eCrime | Russia / Russian-speaking |
 | 10 | [Interlock](10_Interlock.txt) | eCrime | Unknown |
 | 11 | [ShinyHunters](11_ShinyHunters.txt) | eCrime | Multi-national (Western) |
