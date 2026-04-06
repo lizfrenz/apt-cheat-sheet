@@ -6,7 +6,7 @@ Tracking modern cyber threat actors for fun, work, and study.
 
 | # | Threat Actor | Type | Suspected Origin |
 |---|---|---|---|
-| 1 | [Sandworm](01_Sandworm.txt) | APT | Russia — GRU Unit 74455 |
+| 1 | [Sandworm](01_Sandworm.md) | APT | Russia — GRU Unit 74455 |
 | 2 | [Dragonfly](02_Dragonfly.txt) | APT | Russia — FSB Center 16 |
 | 3 | [UAC-0099](03_UAC-0099.txt) | APT | Russia nexus |
 | 4 | [PHALT#BLYX](04_PHALT-HASH-BLYX.txt) | APT | Russia / Russian-speaking nexus |
