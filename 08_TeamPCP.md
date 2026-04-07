@@ -104,20 +104,20 @@ The group's dual-use tool stack includes **FRP** (Fast Reverse Proxy) for persis
 First documented use of **Internet Computer Protocol (ICP) blockchain canisters** as decentralized, censorship-resistant C2 dead-drops.
 
 ### 4.3 Evasion Techniques
-####LotL
+#### LotL
 Use of **GitHub Releases API as a fallback exfiltration channel**, creating `tpcp-docs` repositories on victim GitHub accounts to stage stolen data.
 Use of an **AI-powered autonomous agent** (hackerbot-claw/openclaw) for automated GitHub Actions exploitation — one of the earliest confirmed cases of AI-assisted supply chain attacks.
 
-####Persistence
+#### Persistence
 Introduction of **.pth file persistence** for Python, ensuring code auto-executes on any Python invocation and survives package removal.
 
-####Encryption
+#### Encryption
 Exfiltrated data across all campaigns uses a consistent format: encrypted archives named `tpcp[.]tar[.]gz` with **AES-256-CBC \+ RSA-4096 (OAEP) encryption**. The same RSA public key appears across all campaign waves — the strongest technical attribution link tying these operations together. 
 
-####Obfuscation
+#### Obfuscation
 Deployment of **WAV audio steganography** for payload delivery, with XOR-obfuscated executables embedded in audio files.
 
-####Anti-forensic techniques 
+#### Anti-forensic techniques 
 Anti-forensic techniques include the October 1985 timestamp Easter egg, "Bad Apple\!\!" anti-sandbox tricks, double-encoded Base64 with zlib compression for miners, and operational signatures like songs embedded in payloads.
 
 
