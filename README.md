@@ -1,7 +1,8 @@
 # APT Cheat Sheet
 Tracking modern cyber threat actors for fun, work, and study.
 ---
-
+>This project started as a FOR578 exercise, and now it's growing into something more. Tracking threat actors is not as "fancy" as it sounds and it requires continuous research and relentless sifting through data, even if someone prepackaged it for you.  Both research and sifting are done through automation, which needs constant refinement. TBC 📌
+---
 ## Table of Contents
 
 | # | Threat Actor | Type | Suspected Origin |
