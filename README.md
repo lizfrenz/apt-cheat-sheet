@@ -21,4 +21,4 @@ Tracking modern cyber threat actors for fun, work, and study.
 | 13 | [DPRK IT Workers](13_DPRK_IT_Workers.txt) | APT | North Korea — RGB |
 | 14 | [DarkSpectre](14_DarkSpectre.txt) | APT | China nexus |
 | 15 | [Mustang Panda](15_Mustang_Panda.txt) | APT | China — MSS/PLA |
-| 16 | [Silver Fox](16_Silver_Fox.txt) | APT | China nexus |
+| 16 | [Silver Fox](16_Silver_Fox.md) | APT | China nexus |
