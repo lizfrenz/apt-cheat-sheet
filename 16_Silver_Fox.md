@@ -1,0 +1,172 @@
+\# Threat Actor Profile: Silver Fox
+
+\>Discovered by Chinese security firm ThreatBook. Silver Fox is a highly organized, China-aligned threat group that has evolved from domestic cybercrime into a dual-purpose espionage-and-profit operation spanning at least 10 countries across Asia-Pacific, with confirmed false flag tactics designed to misdirect attribution. In early campaigns Silver Fox  targeted individual Chinese-speaking users seeking VPN and censorship-bypass tools, AI applications, and gaming software.  A March 2025 builder leak on GitHub catalyzed a surge of \~6,000 detected samples in the subsequent year, making Silver Fox one of the most prolific threats in the APAC region today. Key attribution evidence includes: malware lineage from Gh0st RAT (Chinese origin, source code leaked 2008), Chinese-language C2 communications and Simplified Chinese targeting, infrastructure hosted on Alibaba Cloud and by CTG Server LTD (ASN 152194), and targeting patterns aligned with PRC intelligence priorities (Taiwan government and technology firms, Japanese enterprises, Indian financial institutions).
+
+\---
+
+\#\# 1\. Basic Identification
+
+| Field | Value |  
+|---|---|  
+| \*\*Primary Name\*\* | Silver Fox |  
+| \*\*Aliases\*\* | Silver Fox (银狐), Void Arachne, SwimSnake (游蛇), UTG-Q-1000, and The Great Thief of Valley |  
+| \*\*Actor Type\*\* | APT (note: exhibits hybrid financially motivated / state espionage characteristics — possible state-sponsored group masquerading as eCrime) |  
+| \*\*Suspected Origin\*\* | In the interests of Chinese gov; malware lineage from Gh0st RAT |  
+| \*\*Active Since\*\* | 2022  |  
+| \*\*Current Status\*\* | Active |
+
+\---
+
+\#\# 2\. Notable Events
+
+\*\*2.1 Chinese-Speaking User Campaign via Winos 4.0 / ValleyRAT (2024)\*\*
+
+| Field | Details |  
+|---|---|  
+| \*\*Date\*\* | 2024-06 |  
+| \*\*Campaign / Vulnerability Name\*\* | ValleyRAT / Winos 4.0 Campaign |  
+| \*\*Victims / Targets\*\* | Chinese-speaking individuals and organizations; government entities, cybersecurity companies, e-commerce, finance, gaming companies |  
+| \*\*Description\*\* | Silver Fox (tracked by Trend Micro as Void Arachne) distributed ValleyRAT (aka Winos 4.0) through SEO poisoning, Telegram channels, and social media, disguising the malware as popular AI applications, VPN software, and gaming tools. The campaign targeted Chinese-speaking users circumventing the Great Firewall. ValleyRAT is a modular backdoor enabling keystroke logging, security bypass, screen capture, and data exfiltration. |  
+| \*\*Source / Link\*\* | Trend Micro / Forescout Vedere Labs — https://industrialcyber.co/medical/forescout-details-silver-fox-campaign-targeting-healthcare-with-backdoors-keyloggers-crypto-miners/ |
+
+\*\*2.2 Healthcare Sector Targeting via DICOM Viewer (2024–2025)\*\*
+
+| Field | Details |  
+|---|---|  
+| \*\*Date\*\* | 2024-07 / 2025-01 |  
+| \*\*Campaign / Vulnerability Name\*\* | DICOM Viewer Trojanization Campaign |  
+| \*\*Victims / Targets\*\* | Healthcare organizations in US and Canada; patients and hospitals via Philips DICOM medical imaging viewers |  
+| \*\*Description\*\* | Forescout Vedere Labs identified 29 malware samples (July 2024–January 2025\) masquerading as Philips DICOM viewers. The MediaViewerLauncher.exe first-stage malware performed C2 beaconing, downloaded encrypted payloads from Alibaba Cloud, and established persistence via Windows Scheduled Tasks. Final payloads included ValleyRAT backdoor, a keylogger, and an XMRig cryptocurrency miner. |  
+| \*\*Source / Link\*\* | Forescout Vedere Labs / Infosecurity Magazine — https://www.infosecurity-magazine.com/news/chinese-silver-fox-backdoors/ |
+
+\*\*2.3 Microsoft Teams SEO Poisoning with Russian False Flag (2025)\*\*
+
+| Field | Details |  
+|---|---|  
+| \*\*Date\*\* | 2025-11 |  
+| \*\*Campaign / Vulnerability Name\*\* | teamscn\[.\]com Campaign |  
+| \*\*Victims / Targets\*\* | Chinese-speaking users and organizations, including Western companies operating in China |  
+| \*\*Description\*\* | Silver Fox used a fake Microsoft Teams website (teamscn\[.\]com) to distribute ValleyRAT loaders, incorporating Cyrillic characters in the ZIP filename to create a Russian false flag and complicate attribution. ReliaQuest linked this to Silver Fox via infrastructure pivot analysis connecting the domain to prior Telegram phishing sites targeting Chinese-speaking users. |  
+| \*\*Source / Link\*\* | ReliaQuest — https://reliaquest.com/blog/threat-spotlight-silver-foxs-russian-ruse-fake-microsoft-teams-attack/ |
+
+\*\*2.4 South Asia Tax Lure Campaign (2025–2026)\*\*
+
+| Field | Details |  
+|---|---|  
+| \*\*Date\*\* | 2025-2026 |  
+| \*\*Campaign / Vulnerability Name\*\* | Tax Authority Impersonation Campaign |  
+| \*\*Victims / Targets\*\* | South Asian financial sector; organizations in India and surrounding region |  
+| \*\*Description\*\* | Silver Fox transitioned from ValleyRAT to abusing a misconfigured Chinese RMM tool, then to a custom Python-based stealer disguised as a WhatsApp application. Lures impersonated national tax authorities and payroll documents. Sekoia TDR confirmed the evolution across 2025–2026, noting the group increasingly blends intelligence collection with financial crime. |  
+| \*\*Source / Link\*\* | Sekoia TDR — https://blog.sekoia.io/silver-fox-the-only-tax-audit-where-the-fine-print-installs-malware/ |
+
+\---
+
+\#\# 3\. Primary Targets
+
+\#\#\# Industries / Sectors  
+\- Healthcare (medical imaging platforms)  
+\- Government and law enforcement  
+\- Cybersecurity companies  
+\- E-commerce and financial services  
+\- Gaming  
+\- Chinese-speaking individuals globally (primary demographic)
+
+\#\#\# Notable Victim Organizations  
+\- Healthcare delivery organizations (HDOs) using Philips DICOM viewers  
+\- Chinese-speaking enterprises in US, Canada  
+\- South Asian financial organizations
+
+\#\#\# Technologies & CVEs Exploited  
+\- SEO poisoning (Google Search manipulation)  
+\- Trojanized legitimate software (DICOM viewers, Teams, AI apps, VPN clients)  
+\- ValleyRAT / Winos 4.0 (modular RAT derived from Gh0st RAT)  
+\- TrueSight2 vulnerable driver (AV evasion)  
+\- VMProtect obfuscation  
+\- CleverSoar installer, Nidhogg rootkit (late 2024\)  
+\- Alibaba Cloud for payload hosting
+
+\---  
+\#\# 4\. Arsenal & Detection
+
+\#\#\# 4.1 Lure  
+Tax-themed phishing lures
+
+\#\#\# 4.2 Attributed Capability
+
+\#\#\# 4.2.1 ValleyRAT / Winos 4.0 is the group's primary tool and most important to understand correctly — these are the same malware family, not two distinct tools. Different vendor teams named the same Gh0st RAT derivative independently at different points in time. It is a modular C++ backdoor with 19 main plugins and 24 auxiliary plugins covering remote control, surveillance, credential theft, and data exfiltration. The builder leaked publicly on GitHub in March 2025, producing approximately 6,000 detected samples in the following year.
+
+\#\#\# 4.2.2 HoldingHands RAT (also tracked as Gh0stBins) is a Gh0st RAT variant first observed in October 2025, designed for quiet long-term persistence. It sends heartbeat signals every 60 seconds and supports dynamic C2 address updates via the Windows Registry. Sekoia assesses it as a premium tool reserved for high-value espionage targets.
+
+\#\#\# 4.2.3 Gh0stCringe is deployed alongside HoldingHands and handles the noisier active collection tasks — keylogging, screen capture, clipboard monitoring, and audio surveillance.
+
+\#\#\# 4.2.4 AtlasCross RAT is distributed via typosquatted domains and signed with stolen Extended Validation certificates from a Vietnamese entity. It represents a separate delivery chain from the primary ValleyRAT campaigns.
+
+\#\#\# 4.2.5 Sainbox RAT was documented in a June 2025 campaign alongside a hidden rootkit, distributed through fake websites targeting Chinese-language users.
+
+\#\#\# 4.2.6 Reynolds Ransomware \[shared\] is the group's financially motivated destructive payload, first reported in February 2026\. Notably, it embeds BYOVD components directly within the ransomware executable — specifically the NSecKrnl64.sys driver (CVE-2025-68947) — to disable EDR tools before encrypting. Post-encryption, the group deploys GotoHTTP for persistent remote access.
+
+\#\#\# 4.2.7 PNGPlug Loader functions as a delivery mechanism, used to stage and execute subsequent payloads.
+
+\#\#\# 4.2.8 Nidhogg Rootkit is an open-source kernel-mode rootkit deployed as curl.dll with a client component named hotdog.exe, signed with a stolen CleverSoar certificate.
+
+\#\#\# 4.2.9 Hidden Rootkit (modified) is the foundation of the Driver Plugin embedded within ValleyRAT itself. Silver Fox added approximately 25 new functions to the open-source project, including kernel-to-user-mode APC injection and forced deletion of AV/EDR driver files.
+
+\#\#\# 4.2.10 Custom Python Stealer is the most recently observed payload, appearing in February 2026\. It is disguised as a WhatsApp backup application and targets Malay-speaking users, communicating with the C2 domain xqwmwru\[.\]top using the User-Agent string WhatsApp Backup/1.0.
+
+\#\#\# 4.3 Evasion Techniques  
+\#\#\#\# 4.3.1 Bring-Your-Own-Vulnerable-Driver (BYOVD): seven vulnerable drivers and an arms race with defenders
+
+Driver 1 — amsdk.sys (WatchDog Antimalware v1.0.600): The primary BYOVD driver for modern Windows systems, discovered by Check Point Research in August 2025\. Built on the Zemana Anti-Malware SDK (PDB path references zam64.pdb), this Microsoft-signed driver was critically not listed on the Microsoft Vulnerable Driver Blocklist or in the LOLDrivers database at the time of discovery. It provides arbitrary process termination of PP/PPL-protected processes via IOCTL codes 0x80002010 (REGISTER\_PROCESS) and 0x80002048 (TERMINATE\_PROCESS), plus local privilege escalation and raw disk access. Device name: \\\\.\\amsdk, service name: Amsdk\_Service, persistence path: C:\\Program Files\\RunTime\\Amsdk\_Service.sys. When WatchDog released a patched driver (wamsdk.sys v1.1.100), Silver Fox immediately adapted by modifying the patched driver — flipping a single byte in the unauthenticated timestamp field of the Microsoft Authenticode signature, preserving the valid signature while generating a new hash that bypassed blocklists.
+
+Driver 2 — NSecKrnl64.sys (CVE-2025-68947, CVSS 5.7): Used in both the Telegram installer campaign and embedded within Reynolds ransomware. Provides arbitrary process termination via IOCTL 0x2248E0. The loader (NVIDIA.exe) drops the driver to %LOCALAPPDATA%\\Temp under a randomized name and registers it under HKLM\\SYSTEM\\CurrentControlSet\\Services\\\<RandomName\>.
+
+Driver 3 — ZAM.exe (Zemana v3.0.0.000): Legacy driver for Windows 7 systems, now blocked by the Microsoft Vulnerable Driver Blocklist. Silver Fox's dual-driver strategy selects this driver or amsdk.sys at runtime based on OS version detection.
+
+Driver 4 — wsftprm.sys (Topaz OFD-PM v2.0.0.0): A newer driver used in 2026 Taiwan campaigns, loaded via native APIs (NtLoadDriver and RtlAdjustPrivilege from ntdll.dll). The loader checks the registry for Windows Vulnerable Driver Blocklist status and adapts accordingly.
+
+Drivers 5–7: truesight.sys (TrueSightKiller, deployed as 189atohci.sys in the DICOM viewer campaign to kill Windows Defender processes), rwdriver.sys (custom driver for circumventing user-mode EDR hooks and overloading log forwarding pipelines), and a Nidhogg rootkit driver (open-source, deployed as curl.dll with client hotdog.exe, signed with a stolen CleverSoar certificate).  
+Note, that the targeted process termination list in the amsdk.sys campaign contains 192 unique process names, covering Chinese security products (Qihoo 360, Huorong, Tencent, Kingsoft), Western EDR/AV (Microsoft Defender, CrowdStrike Falcon, Palo Alto Cortex XDR, Sophos, Symantec, Avast, Norton, Kaspersky), and monitoring tools.
+
+\#\#\#\# 4.3.2 Other Evasion  
+Silver Fox layers multiple evasion techniques. Anti-analysis checks include CPU vendor detection for VMs, ISP queries to ip-api.com/json that abort execution on Microsoft/Google/Qihoo 360 networks, window title enumeration for analysis tools, and hardcoded exclusions for attacker development machines (DESKTOP-T3N3M3Q, DESKTOP-03AMF90, WIN-VMHH95J6C26). Process injection methods include reflective DLL injection into svchost.exe, APC-based shellcode injection from kernel mode, and PPID spoofing via Desktop Window Manager context. UAC bypass techniques exploit computerdefaults.exe via debug-object-hijacking, the CMSTPLUA COM class via elevation monikers, and TrustedInstaller impersonation. LOLBins abused include PowerShell (for adding Defender exclusions across the entire C:\\ drive), sc.exe, schtasks.exe, rundll32.exe, WScript.exe, and DllHost.exe. Persistence mechanisms span scheduled tasks (named WindowsPowerShell.WbemScripting.SWbemLocator to mimic legitimate components), kernel services (kernelquick), a deliberately misspelled service (Termaintor), ACL manipulation denying administrator deletion rights, and fileless registry-resident plugins.
+
+\#\#\# 4.4 Detection Recommendations
+
+\#\#\#\# 4.4.1 Behavioral detection priorities  
+BYOVD detection is the highest-priority detection use case. Monitor Sysmon Event ID 6 (Driver Loaded) for any loading of amsdk.sys, wamsdk.sys, wsftprm.sys, NSecKrnl64.sys, or ZAM.exe. Alert on Windows System Event ID 7045 (Service Installed) for kernel-driver services, especially names containing Amsdk\_Service, Termaintor, or kernelquick. Monitor Sysmon Event ID 13 for registry modifications under HKLM\\SYSTEM\\CurrentControlSet\\Services\\Amsdk\_Service. Hash-based detection is necessary but insufficient — Silver Fox demonstrated that flipping a single byte in the unauthenticated timestamp field preserves a valid Microsoft signature while changing the file hash.  
+For process injection detection, monitor svchost.exe, explorer.exe, and colorcpl.exe for anomalous memory allocation patterns. For DLL sideloading, alert on legitimate signed executables (particularly thunder.exe, NtHandleCallback.exe) loading unexpected DLLs from unusual paths. Monitor PowerShell for Defender exclusion additions (Add-MpPreference \-ExclusionPath 'C:\\'). Track file creation in C:\\Program Files\\RunTime\\, C:\\ProgramData\\WindowsData\\, and C:\\ProgramData\\Golden\\.  
+\>\[Reade more about Living Off The Land Drivers detection\](https://www.loldrivers.io/)  
+\>\[Microsoft recommended driver block rules\](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/app-control-for-business/design/microsoft-recommended-driver-block-rules)
+
+\#\#\#\# 4.4.2 Network detection signatures  
+Monitor for XOR-encrypted TCP traffic on ports 52110, 52111, 18852, 18853, 9000, 8917\. Alert on connections from enterprise networks to Chinese cloud storage services (Alibaba OSS, Tencent myqcloud, Volcengine TOS) that are unexpected for the organization. Watch for HTTP requests to ip-api.com/json as an anti-analysis indicator. DNS queries for recently registered .cn/.tw/.top domains with random-looking names warrant investigation. The ValleyRAT C2 XOR key (363636003797e4383a36) can serve as a network signature for deep packet inspection.
+
+\#\#\#\# 4.4.3 Published detection content  
+Nextron Systems published ValleyRAT YARA rules in their November 2025 "Thor vs. Silver Fox" report, available through the commercial Valhalla YARA feed. VMRay added ValleyRAT detection signatures in February 2025\. The LOLDrivers project (loldrivers.io) provides pre-built Sysmon configurations and Sigma rules for vulnerable driver detection. ANY.RUN tags ValleyRAT/Winos/SilverFox samples with behavioral signatures. Key YARA indicators include the string 上线模块.dll (Online Module) in export directories, the misspelled service name Termaintor, embedded Base64-encoded process lists containing Chinese AV names, the XOR key bytes 36 36 36 00 37 97 e4 38 3a 36, PDB paths containing zam64.pdb in non-Zemana binaries, and the attacker machine names DESKTOP-T3N3M3Q, DESKTOP-03AMF90, WIN-VMHH95J6C26.
+
+\---
+
+\#\# 5\. MITRE ATT\&CK TTPs
+
+| Tactic | Technique |  
+|---|---|  
+| Initial Access | Drive-by Compromise \[T1189\] |  
+| Initial Access | Phishing: Spearphishing Attachment \[T1566.001\] |  
+| Execution | Shared Modules \[T1129\] |  
+| Execution | User Execution: Malicious File \[T1204.002\] |  
+| Persistence | Scheduled Task/Job: Scheduled Task \[T1053.005\] |  
+| Persistence | Boot or Logon Autostart Execution: Registry Run Keys \[T1547.001\] |  
+| Defense Evasion | Subvert Trust Controls: Install Root Certificate \[T1553.004\] |  
+| Defense Evasion | Rootkit \[T1014\] |  
+| Defense Evasion | Obfuscated Files or Information \[T1027\] |  
+| Defense Evasion | Impair Defenses: Disable or Modify Tools \[T1562.001\] |  
+| Defense Evasion | Masquerading \[T1036\] |  
+| Credential Access | Input Capture: Keylogging \[T1056.001\] |  
+| Collection | Screen Capture \[T1113\] |  
+| Collection | Credentials from Web Browsers \[T1555.003\] |  
+| Command and Control | Application Layer Protocol: Web Protocols \[T1071.001\] |  
+| Exfiltration | Exfiltration Over C2 Channel \[T1041\] |  
+| Impact | Resource Hijacking \[T1496\] |  
+\>\[Source: Sekoia TDR\](https://blog.sekoia.io/silver-fox-the-only-tax-audit-where-the-fine-print-installs-malware/)
+
+\---  
